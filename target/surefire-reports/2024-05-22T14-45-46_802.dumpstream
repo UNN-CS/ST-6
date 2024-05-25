@@ -1,0 +1,90 @@
+# Created at 2024-05-22T14:45:46.803
+java.io.FileNotFoundException: C:\Users\?????\Desktop\????????? ?????\?????????\Jaba\Test_lab_6\target\jacoco.exe (������� �� ������� ����� ��������� ����)
+
+# Created at 2024-05-22T14:45:46.804
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+
+# Created at 2024-05-22T14:45:46.804
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293)
+
+# Created at 2024-05-22T14:45:46.805
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235)
+
+# Created at 2024-05-22T14:45:46.805
+	at org.jacoco.agent.rt.internal_8ff85ea.output.FileOutput.openFile(FileOutput.java:67)
+
+# Created at 2024-05-22T14:45:46.806
+	at org.jacoco.agent.rt.internal_8ff85ea.output.FileOutput.startup(FileOutput.java:49)
+
+# Created at 2024-05-22T14:45:46.806
+	at org.jacoco.agent.rt.internal_8ff85ea.Agent.startup(Agent.java:122)
+
+# Created at 2024-05-22T14:45:46.807
+	at org.jacoco.agent.rt.internal_8ff85ea.Agent.getInstance(Agent.java:50)
+
+# Created at 2024-05-22T14:45:46.807
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.premain(PreMain.java:45)
+
+# Created at 2024-05-22T14:45:46.808
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+
+# Created at 2024-05-22T14:45:46.808
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+
+# Created at 2024-05-22T14:45:46.808
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+
+# Created at 2024-05-22T14:45:46.809
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+
+# Created at 2024-05-22T14:45:46.816
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+
+# Created at 2024-05-22T14:45:46.816
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:119)
+
+# Created at 2024-05-22T14:45:46.818
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+
+# Created at 2024-05-22T14:45:46.819
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:491)
+
+# Created at 2024-05-22T14:45:46.820
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:503)
+
+# Created at 2024-05-22T14:45:46.821
+Caused by: java.lang.RuntimeException: Class java/util/UUID could not be instrumented.
+
+# Created at 2024-05-22T14:45:46.822
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:140)
+
+# Created at 2024-05-22T14:45:46.823
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:101)
+
+# Created at 2024-05-22T14:45:46.824
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.createRuntime(PreMain.java:55)
+
+# Created at 2024-05-22T14:45:46.824
+	at org.jacoco.agent.rt.internal_8ff85ea.PreMain.premain(PreMain.java:47)
+
+# Created at 2024-05-22T14:45:46.825
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+
+# Created at 2024-05-22T14:45:46.825
+	... 3 more
+
+# Created at 2024-05-22T14:45:46.826
+Caused by: java.lang.NoSuchFieldException: $jacocoAccess
+
+# Created at 2024-05-22T14:45:46.826
+	at java.base/java.lang.Class.getField(Class.java:2149)
+
+# Created at 2024-05-22T14:45:46.827
+	at org.jacoco.agent.rt.internal_8ff85ea.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:138)
+
+# Created at 2024-05-22T14:45:46.827
+	... 7 more
+
+# Created at 2024-05-22T14:45:46.828
+*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at s\open\src\java.instrument\share\native\libinstrument\JPLISAgent.c line: 422
+
