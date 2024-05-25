@@ -1,0 +1,431 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Game</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: Game (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Game</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (92/92)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;import java.awt.*;
+&nbsp;import java.awt.event.*;
+&nbsp;import javax.swing.*;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Random;
+&nbsp;import java.io.FileWriter;
+&nbsp;import java.io.PrintWriter;
+&nbsp;import java.io.IOException;
+&nbsp;
+&nbsp;enum State { PLAYING, OWIN, XWIN, DRAW };
+&nbsp;
+&nbsp;
+&nbsp;class Player {
+&nbsp;    public char symbol;
+&nbsp;    public int move;
+&nbsp;    public boolean selected;
+&nbsp;    public boolean win;
+&nbsp;}
+&nbsp;
+&nbsp;class Game {
+&nbsp;    public State state;
+&nbsp;    public Player player1, player2;
+&nbsp;    public Player cplayer; // текущий игрок
+&nbsp;    public int nmove;  // последний шаг сделанный действующим игроком
+&nbsp;    public char symbol;
+&nbsp;    public static final int INF = 100;
+&nbsp;    public int q;
+&nbsp;    public char[] board;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    public Game() {</b>
+<b class="fc">&nbsp;        player1=new Player();</b>
+<b class="fc">&nbsp;        player2=new Player();</b>
+<b class="fc">&nbsp;        player1.symbol=&#39;X&#39;;</b>
+<b class="fc">&nbsp;        player2.symbol=&#39;O&#39;;</b>
+<b class="fc">&nbsp;        state=State.PLAYING;</b>
+<b class="fc">&nbsp;        board=new char[9];   // текущая доска в игре</b>
+<b class="fc">&nbsp;        for(int i=0;i&lt;9;i++)</b>
+<b class="fc">&nbsp;            board[i]=&#39; &#39;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // возвращаем состояние игры
+&nbsp;    public State checkState(char[] board)
+&nbsp;    {
+&nbsp;        //char symbol=game.symbol;//cplayer.symbol;
+<b class="fc">&nbsp;        State state=State.PLAYING;</b>
+<b class="fc">&nbsp;        if ((board[0] == symbol &amp;&amp; board[1] == symbol &amp;&amp; board[2] == symbol) ||</b>
+&nbsp;                (board[3] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[5] == symbol) ||
+&nbsp;                (board[6] == symbol &amp;&amp; board[7] == symbol &amp;&amp; board[8] == symbol) ||
+&nbsp;                (board[0] == symbol &amp;&amp; board[3] == symbol &amp;&amp; board[6] == symbol) ||
+&nbsp;                (board[1] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[7] == symbol) ||
+&nbsp;                (board[2] == symbol &amp;&amp; board[5] == symbol &amp;&amp; board[8] == symbol) ||
+&nbsp;                (board[0] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[8] == symbol) ||
+&nbsp;                (board[2] == symbol &amp;&amp; board[4] == symbol &amp;&amp; board[6] == symbol))
+&nbsp;        {
+<b class="fc">&nbsp;            if (symbol == &#39;X&#39;)</b>
+<b class="fc">&nbsp;                state = State.XWIN;</b>
+<b class="fc">&nbsp;            else if (symbol == &#39;O&#39;)</b>
+<b class="fc">&nbsp;                state = State.OWIN;</b>
+&nbsp;        }
+&nbsp;        else {
+<b class="fc">&nbsp;            state = State.DRAW;</b>
+<b class="fc">&nbsp;            for (int i = 0; i &lt; 9; i++)</b>
+&nbsp;            {
+<b class="fc">&nbsp;                if (board[i] == &#39; &#39;) {</b>
+<b class="fc">&nbsp;                    state = State.PLAYING;</b>
+<b class="fc">&nbsp;                    break;</b>
+&nbsp;                }
+&nbsp;            }
+&nbsp;        }
+<b class="fc">&nbsp;        return state;</b>
+&nbsp;    }
+&nbsp;    // сгенерировать возможные ходы
+&nbsp;    void generateMoves(char[] board, ArrayList&lt;Integer&gt; move_list) {
+<b class="fc">&nbsp;        for (int i = 0; i &lt; 9; i++)</b>
+<b class="fc">&nbsp;            if (board[i] == &#39; &#39;)</b>
+<b class="fc">&nbsp;                move_list.add(i);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // оценка позиции
+&nbsp;    int evaluatePosition(char[] board, Player player)
+&nbsp;    {
+<b class="fc">&nbsp;        State state=checkState(board);</b>
+<b class="fc">&nbsp;        if ((state == State.XWIN || state == State.OWIN || state == State.DRAW))</b>
+&nbsp;        {
+<b class="fc">&nbsp;            if ((state == State.XWIN &amp;&amp; player.symbol == &#39;X&#39;) || (state == State.OWIN &amp;&amp; player.symbol == &#39;O&#39;))</b>
+<b class="fc">&nbsp;                return +Game.INF;</b>
+<b class="fc">&nbsp;            else if ((state == State.XWIN &amp;&amp; player.symbol == &#39;O&#39;) || (state == State.OWIN &amp;&amp; player.symbol == &#39;X&#39;))</b>
+<b class="fc">&nbsp;                return -Game.INF;</b>
+<b class="fc">&nbsp;            else if (state == State.DRAW)</b>
+<b class="fc">&nbsp;                return 0;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return -1;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    int MiniMax(char[] board, Player player) // выбор наилучшего хода
+&nbsp;    {
+<b class="fc">&nbsp;        int best_val = -Game.INF, index = 0;</b>
+<b class="fc">&nbsp;        ArrayList&lt;Integer&gt; move_list=new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        int[] best_moves = new int[9];</b>
+&nbsp;
+<b class="fc">&nbsp;        generateMoves(board, move_list);</b>
+&nbsp;
+<b class="fc">&nbsp;        while (move_list.size()!=0) {</b>
+<b class="fc">&nbsp;            board[move_list.get(0)] = player.symbol;</b>
+<b class="fc">&nbsp;            symbol = player.symbol;</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;            int val = MinMove(board, player);</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;            if (val &gt; best_val) {</b>
+<b class="fc">&nbsp;                best_val = val;</b>
+<b class="fc">&nbsp;                index = 0;</b>
+<b class="fc">&nbsp;                best_moves[index] = move_list.get(0)+1;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            else if (val == best_val)</b>
+<b class="fc">&nbsp;                best_moves[++index] = move_list.get(0)+1;</b>
+&nbsp;
+<b class="fc">&nbsp;            System.out.printf(&quot;\nminimax: %3d(%1d) &quot;, 1 + move_list.get(0), val);</b>
+<b class="fc">&nbsp;            board[move_list.get(0)] = &#39; &#39;;</b>
+<b class="fc">&nbsp;            move_list.remove(0);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        if (index &gt; 0)  {</b>
+<b class="fc">&nbsp;            Random r = new Random();</b>
+<b class="fc">&nbsp;            index = r.nextInt(index);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        System.out.printf(&quot;\nminimax best: %3d(%1d) &quot;, best_moves[index], best_val);</b>
+<b class="fc">&nbsp;        System.out.printf(&quot;Steps counted: %d&quot;, q);</b>
+<b class="fc">&nbsp;        q = 0;</b>
+<b class="fc">&nbsp;        return best_moves[index];</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    int MinMove(char[] board, Player player)  {
+&nbsp;
+<b class="fc">&nbsp;        int pos_value = evaluatePosition(board, player);</b>
+<b class="fc">&nbsp;        if (pos_value != -1)</b>
+<b class="fc">&nbsp;            return pos_value;</b>
+<b class="fc">&nbsp;        q++;</b>
+<b class="fc">&nbsp;        int best_val = +Game.INF;</b>
+<b class="fc">&nbsp;        ArrayList&lt;Integer&gt; move_list=new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="fc">&nbsp;        generateMoves(board, move_list);</b>
+&nbsp;
+<b class="fc">&nbsp;        while (move_list.size()!=0) {</b>
+<b class="fc">&nbsp;            symbol= (player.symbol == &#39;X&#39;) ? &#39;O&#39; : &#39;X&#39;;</b>
+<b class="fc">&nbsp;            board[move_list.get(0)] = symbol;</b>
+&nbsp;
+<b class="fc">&nbsp;            int val = MaxMove(board, player);</b>
+&nbsp;
+<b class="fc">&nbsp;            if (val &lt; best_val) {</b>
+<b class="fc">&nbsp;                best_val = val;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            board[move_list.get(0)] = &#39; &#39;;</b>
+<b class="fc">&nbsp;            move_list.remove(0);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return best_val;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    int MaxMove(char[] board, Player player) {
+<b class="fc">&nbsp;        int pos_value = evaluatePosition(board, player);</b>
+<b class="fc">&nbsp;        if (pos_value != -1)</b>
+<b class="fc">&nbsp;            return pos_value;</b>
+<b class="fc">&nbsp;        q++;</b>
+<b class="fc">&nbsp;        int best_val = -Game.INF;</b>
+<b class="fc">&nbsp;        ArrayList&lt;Integer&gt; move_list=new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        generateMoves(board, move_list);</b>
+<b class="fc">&nbsp;        while (move_list.size()!=0) {</b>
+<b class="fc">&nbsp;            symbol=(player.symbol == &#39;X&#39;) ? &#39;X&#39; : &#39;O&#39;;</b>
+<b class="fc">&nbsp;            board[move_list.get(0)] = symbol;</b>
+<b class="fc">&nbsp;            int val = MinMove(board, player);</b>
+<b class="fc">&nbsp;            if (val &gt; best_val) {</b>
+<b class="fc">&nbsp;                best_val = val;</b>
+&nbsp;            }
+<b class="fc">&nbsp;            board[move_list.get(0)] = &#39; &#39;;</b>
+<b class="fc">&nbsp;            move_list.remove(0);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return best_val;</b>
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;public class Program {
+&nbsp;
+&nbsp;    public static FileWriter fileWriter;
+&nbsp;    public static PrintWriter printWriter;
+&nbsp;    public static void main(String[] args) throws IOException {
+&nbsp;        JFrame frame = new JFrame(&quot;Demo&quot;);
+&nbsp;        frame.add(new TicTacToePanel(new GridLayout(3,3)));
+&nbsp;        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+&nbsp;        frame.setBounds(5, 5, 500, 500);
+&nbsp;        frame.setVisible(true);
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;class TicTacToeCell extends JButton {
+&nbsp;    private boolean isFill;
+&nbsp;    private int num;
+&nbsp;    private int row;
+&nbsp;    private int col;
+&nbsp;    private char marker;
+&nbsp;
+&nbsp;    public TicTacToeCell(int num,int x,int y) {
+&nbsp;        this.num=num;
+&nbsp;        row=y;
+&nbsp;        col=x;
+&nbsp;        marker=&#39; &#39;;
+&nbsp;        setText(Character.toString(marker));
+&nbsp;        setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 40));
+&nbsp;    }
+&nbsp;    public void setMarker(String m) {
+&nbsp;        marker=m.charAt(0);
+&nbsp;        setText(m);
+&nbsp;        setEnabled(false);
+&nbsp;    }
+&nbsp;    public char getMarker() {
+&nbsp;        return marker;
+&nbsp;    }
+&nbsp;    public int getRow() {
+&nbsp;        return row;
+&nbsp;    }
+&nbsp;    public int getCol() {
+&nbsp;        return col;
+&nbsp;    }
+&nbsp;    public int getNum() {
+&nbsp;        return num;
+&nbsp;    }
+&nbsp;
+&nbsp;}
+&nbsp;
+&nbsp;class Utility {
+&nbsp;
+&nbsp;    public static void print(char[] board) {
+&nbsp;        System.out.println();
+&nbsp;        for(int j=0;j&lt;9;j++)
+&nbsp;            System.out.print(board[j]+&quot;-&quot;);
+&nbsp;        System.out.println();
+&nbsp;    }
+&nbsp;    public static void print(int[] board) {
+&nbsp;        System.out.println();
+&nbsp;        for(int j=0;j&lt;9;j++)
+&nbsp;            System.out.print(board[j]+&quot;-&quot;);
+&nbsp;        System.out.println();
+&nbsp;    }
+&nbsp;    public static void print(ArrayList&lt;Integer&gt; moves) {
+&nbsp;        System.out.println();
+&nbsp;        for(int j=0;j&lt;moves.size();j++)
+&nbsp;            System.out.print(moves.get(j)+&quot;-&quot;);
+&nbsp;        System.out.println();
+&nbsp;    }
+&nbsp;}
+&nbsp;
+&nbsp;class TicTacToePanel extends JPanel implements ActionListener {
+&nbsp;
+&nbsp;    private Game game;
+&nbsp;
+&nbsp;    private void createCell(int num,int x,int y) {
+&nbsp;        cells[num]=new TicTacToeCell(num,x,y);
+&nbsp;        cells[num].addActionListener(this);
+&nbsp;        add(cells[num]);
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    private TicTacToeCell[] cells = new TicTacToeCell[9];
+&nbsp;    TicTacToePanel(GridLayout layout) {
+&nbsp;        super(layout);
+&nbsp;        createCell(0,0,0);
+&nbsp;        createCell(1,1,0);
+&nbsp;        createCell(2,2,0);
+&nbsp;        createCell(3,0,1);
+&nbsp;        createCell(4,1,1);
+&nbsp;        createCell(5,2,1);
+&nbsp;        createCell(6,0,2);
+&nbsp;        createCell(7,1,2);
+&nbsp;        createCell(8,2,2);
+&nbsp;        game=new Game();
+&nbsp;        game.cplayer=game.player1;
+&nbsp;    }
+&nbsp;
+&nbsp;    public void actionPerformed(ActionEvent ae) {
+&nbsp;        game.player1.move = -1;
+&nbsp;        game.player2.move = -1;
+&nbsp;        //System.out.println(game.cplayer.symbol);
+&nbsp;        //System.out.println(((TicTacToeCell)(ae.getSource())).getNum());
+&nbsp;
+&nbsp;
+&nbsp;        int i=0;
+&nbsp;        for(TicTacToeCell jb: cells) {
+&nbsp;            if(ae.getSource()==jb) {
+&nbsp;                jb.setMarker(Character.toString(game.cplayer.symbol));
+&nbsp;            }
+&nbsp;            game.board[i++]=jb.getMarker();
+&nbsp;        }
+&nbsp;        if(game.cplayer==game.player1) {
+&nbsp;
+&nbsp;            game.player2.move = game.MiniMax(game.board, game.player2);
+&nbsp;            game.nmove = game.player2.move;
+&nbsp;            game.symbol = game.player2.symbol;
+&nbsp;            game.cplayer = game.player2;
+&nbsp;            if(game.player2.move&gt;0)
+&nbsp;                cells[game.player2.move-1].doClick();
+&nbsp;        }
+&nbsp;        else
+&nbsp;        {
+&nbsp;            game.nmove = game.player1.move;
+&nbsp;            game.symbol = game.player1.symbol;
+&nbsp;            game.cplayer = game.player1;
+&nbsp;        }
+&nbsp;
+&nbsp;        game.state=game.checkState(game.board);
+&nbsp;
+&nbsp;
+&nbsp;        if(game.state==State.XWIN) {
+&nbsp;            JOptionPane.showMessageDialog(null,&quot;Выиграли крестики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);
+&nbsp;            System.exit(0);
+&nbsp;
+&nbsp;        }
+&nbsp;        else if(game.state==State.OWIN) {
+&nbsp;            JOptionPane.showMessageDialog(null,&quot;Выиграли нолики&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);
+&nbsp;            System.exit(0);
+&nbsp;        }
+&nbsp;        else if(game.state==State.DRAW) {
+&nbsp;            JOptionPane.showMessageDialog(null,&quot;Ничья&quot;,&quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);
+&nbsp;            System.exit(0);
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-05-25 18:02</div>
+</div>
+</body>
+</html>
