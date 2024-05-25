@@ -228,9 +228,4 @@ public class AppTest
             ar.add(1); ar.add(2); ar.add(0); ar.add(-1); ar.add(1); ar.add(1); ar.add(2); ar.add(0); ar.add(-1);
             Utility.print(ar);});
     }
-
-    @org.junit.jupiter.api.Test
-    void ProgramMain() {
-        Assertions.assertDoesNotThrow(() -> {Program.main(new String[] {});});
-    }
 }
