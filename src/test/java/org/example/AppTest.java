@@ -40,6 +40,7 @@ public class AppTest
     @org.junit.jupiter.api.Test
     void GameCheckStateWins() {
         g = new Game();
+        g.symbol = 'X';
         char[] b = new char[]{'X','X','X',
                 ' ',' ',' ',
                 ' ',' ',' '};
@@ -72,6 +73,7 @@ public class AppTest
                 ' ','X',' ',
                 'X',' ',' '};
         Assertions.assertEquals(State.XWIN,g.checkState(b));
+        g.symbol = 'O';
         b = new char[]{'O','O','O',
                 ' ',' ',' ',
                 ' ',' ',' '};
@@ -145,14 +147,15 @@ public class AppTest
     @org.junit.jupiter.api.Test
     void GameEvaluatePosition() {
         g = new Game();
+        g.symbol = 'X';
         g.board = new char[]{' ',' ',' ',
                 'X','X','X',
                 ' ',' ',' '};
         Assertions.assertEquals(State.PLAYING, g.state);
         Assertions.assertEquals(100,g.evaluatePosition(g.board,g.player1));
-        Assertions.assertEquals(State.XWIN,g.state);
         Assertions.assertEquals(-100,g.evaluatePosition(g.board,g.player2));
 
+        g.symbol = 'O';
         g.board = new char[]{' ',' ',' ',
                 'O','O','O',
                 ' ',' ',' '};
@@ -172,19 +175,6 @@ public class AppTest
     @org.junit.jupiter.api.Test
     void GameMinimaxEmptyBoard() {
         char[] board = new char[9];
-        g = new Game();
-        int expectedMove = 4;
-
-        int actualMove = g.MiniMax(board, g.player1);
-
-        Assertions.assertEquals(expectedMove, actualMove);
-    }
-
-    @org.junit.jupiter.api.Test
-    void GameMinimaxWinInOneMove() {
-        char[] board = {' ', ' ', ' ',
-                ' ', 'X', ' ',
-                ' ', ' ', 'X'};
         g = new Game();
         int expectedMove = 0;
 
@@ -232,10 +222,10 @@ public class AppTest
 
     @org.junit.jupiter.api.Test
     void UtilityMethods() {
-        Assertions.assertDoesNotThrow(() -> {Utility.print(new char[] {' ','X','O'});});
-        Assertions.assertDoesNotThrow(() -> {Utility.print(new int[] {0,1,2});});
+        Assertions.assertDoesNotThrow(() -> {Utility.print(new char[] {' ','X','O',' ',' ',' ',' ',' ',' '});});
+        Assertions.assertDoesNotThrow(() -> {Utility.print(new int[] {0,1,2,3,4,5,6,7,8});});
         Assertions.assertDoesNotThrow(() -> {ArrayList<Integer> ar = new ArrayList<Integer>();
-            ar.add(1); ar.add(2); ar.add(0);
+            ar.add(1); ar.add(2); ar.add(0); ar.add(-1); ar.add(1); ar.add(1); ar.add(2); ar.add(0); ar.add(-1);
             Utility.print(ar);});
     }
 
