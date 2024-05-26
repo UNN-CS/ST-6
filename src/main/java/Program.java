@@ -17,6 +17,7 @@ class Player {
   public boolean win;
 }
 
+
 class Game {
     public State state;
     public Player player1, player2;
@@ -244,6 +245,7 @@ class Utility {
       System.out.println();
   }  
 }
+
 
 class TicTacToePanel extends JPanel implements ActionListener {
 
