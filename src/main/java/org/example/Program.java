@@ -1,3 +1,4 @@
+package org.example;
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
 
@@ -264,7 +265,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
    }
 
-   private TicTacToeCell[] cells = new TicTacToeCell[9];
+   TicTacToeCell[] cells = new TicTacToeCell[9];
    TicTacToePanel(GridLayout layout) {
        super(layout);
        createCell(0,0,0);
