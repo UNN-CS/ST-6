@@ -103,7 +103,7 @@ public class GameTest {
     @Test
     public void minimaxTest() {
         Game game = new Game();
-        game.board = new char[] {'X', 'X', ' ', ' ', 'O', 'X', ' ', ' ', 'X'};
+        game.board = new char[] {'X', 'X', ' ', 'O', 'O', 'X', 'O', ' ', 'X'};
         int move = game.MiniMax(game.board, game.player2);
         Assert.assertTrue(move >= 1 && move <= 9);
     }
