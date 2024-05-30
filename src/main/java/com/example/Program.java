@@ -263,6 +263,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
        cells[num]=new TicTacToeCell(num,x,y);
        cells[num].addActionListener(this);
        add(cells[num]);
+
    }
 
    private TicTacToeCell[] cells = new TicTacToeCell[9];
@@ -327,6 +328,10 @@ class TicTacToePanel extends JPanel implements ActionListener {
         JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
       }
+
+
+
+
    }
 }
 
