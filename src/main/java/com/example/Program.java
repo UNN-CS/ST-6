@@ -1,5 +1,7 @@
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
+package com.example;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -261,7 +263,6 @@ class TicTacToePanel extends JPanel implements ActionListener {
        cells[num]=new TicTacToeCell(num,x,y);
        cells[num].addActionListener(this);
        add(cells[num]);
-
    }
 
    private TicTacToeCell[] cells = new TicTacToeCell[9];
@@ -325,11 +326,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
       else if(game.state==State.DRAW) {
         JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
-      } 
-
-
-
-
+      }
    }
 }
 
