@@ -186,7 +186,7 @@ public class ProgramTest {
         game.board[1] = 'O';
         game.board[2] = 'X';
         int result = game.MiniMax(game.board, game.player1);
-        assertFalse(result >= 1 && result <= 9);
+        assertTrue(result >= 1 && result <= 9);
     }
 
     @Test
