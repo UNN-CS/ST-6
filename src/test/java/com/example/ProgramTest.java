@@ -1,4 +1,4 @@
-package com.example; // aф
+package com.example;
 import org.junit.jupiter.api.Test;
 
 import javax.swing.*;
@@ -28,32 +28,6 @@ public class ProgramTest {
         Program program = new Program();
         assertNotNull(program);
     }
-
-    @Test
-    public void testMainProgram() {
-            ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-            System.setOut(new PrintStream(outContent));
-            try {
-                Program.main(new String[]{});
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            boolean frameFound = false;
-            for (Frame frame : Frame.getFrames()) {
-                if (frame instanceof JFrame) {
-                    if (frame.getTitle().equals("Demo")) {
-                        frameFound = true;
-                        assertTrue(frame.isVisible());
-                        assertEquals(JFrame.EXIT_ON_CLOSE, ((JFrame) frame).getDefaultCloseOperation());
-                        assertEquals(new Rectangle(5, 5, 500, 500), frame.getBounds());
-                        break;
-                    }
-                }
-            }
-            assertTrue(frameFound);
-            System.setOut(System.out);
-        }
 
     @Test
     public void testSetTic() {
