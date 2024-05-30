@@ -182,10 +182,11 @@ public class ProgramTest {
 
     @Test
     public void testMiniMax() {
-        game.board[0] = 'X';
-        game.board[1] = 'O';
-        game.board[2] = 'X';
-        int result = game.MiniMax(game.board, game.player1);
+        Game game1 = new Game();
+        game1.board[0] = 'X';
+        game1.board[1] = 'O';
+        game1.board[2] = 'X';
+        int result = game1.MiniMax(game1.board, game1.player1);
         assertTrue(result >= 1 && result <= 9);
     }
 
