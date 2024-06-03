@@ -1,3 +1,5 @@
+package org.example;
+
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
 
@@ -183,7 +185,7 @@ class Game {
   }
 }
 
-public class Program {
+public class App {
 
     public static FileWriter fileWriter;
     public static PrintWriter printWriter;
