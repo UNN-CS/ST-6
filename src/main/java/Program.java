@@ -1,6 +1,3 @@
-// Реализация игры "Крестики-нолики" (3x3)
-// Минимаксный алгоритм
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

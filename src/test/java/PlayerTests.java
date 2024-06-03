@@ -1,3 +1,7 @@
+//
+// Кашин Степан 2024
+//
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,6 +12,15 @@ public class PlayerTests {
     @BeforeEach
     public void setUp() {
         player = new Player();
+    }
+
+    @Test
+    public void testSymbol() {
+        player.symbol = 'X';
+        assertEquals('X', player.symbol);
+
+        player.symbol = 'O';
+        assertEquals('O', player.symbol);
     }
 
     @Test
@@ -22,14 +35,5 @@ public class PlayerTests {
         assertTrue(player.selected);
         assertTrue(player.win);
         assertEquals(5, player.move);
-    }
-
-    @Test
-    public void testSymbol() {
-        player.symbol = 'X';
-        assertEquals('X', player.symbol);
-
-        player.symbol = 'O';
-        assertEquals('O', player.symbol);
     }
 }

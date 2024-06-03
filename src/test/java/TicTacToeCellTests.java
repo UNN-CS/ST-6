@@ -1,44 +1,38 @@
+//
+// Кашин Степан 2024
+//
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.awt.Font;
 
-public class TicTacToeCellTests {
-    private TicTacToeCell cell;
-
-    @BeforeEach
-    public void setUp() {
-        cell = new TicTacToeCell(0, 0, 0);
-    }
+public class TicTacToeCellTest {
 
     @Test
-    public void testInitialValues() {
-        Assertions.assertEquals(' ', cell.getMarker());
-        Assertions.assertEquals(0, cell.getNum());
-        Assertions.assertEquals(0, cell.getRow());
-        Assertions.assertEquals(0, cell.getCol());
+    public void testInitialState() {
+        TicTacToeCell cell = new TicTacToeCell(1, 0, 0);
+        assertEquals(' ', cell.getMarker());
+        assertEquals(0, cell.getRow());
+        assertEquals(0, cell.getCol());
+        assertEquals(1, cell.getNum());
     }
 
     @Test
     public void testSetMarker() {
+        TicTacToeCell cell = new TicTacToeCell(1, 0, 0);
         cell.setMarker("X");
         assertEquals('X', cell.getMarker());
         assertFalse(cell.isEnabled());
     }
 
     @Test
-    public void testGetRow() {
-        assertEquals(0, cell.getRow());
-    }
-
-    @Test
-    public void testGetCol() {
-        assertEquals(0, cell.getCol());
-    }
-
-    @Test
-    public void testGetNum() {
-        assertEquals(0, cell.getNum());
+    public void testSetFont() {
+        TicTacToeCell cell = new TicTacToeCell(1, 0, 0);
+        Font font = cell.getFont();
+        assertEquals("Arial", font.getName());
+        assertEquals(40, font.getSize());
     }
 }
