@@ -12,7 +12,6 @@ import java.io.IOException;
 
 enum State { PLAYING, OWIN, XWIN, DRAW };
 
-
 class Player {
   public char symbol;
   public int move;
@@ -29,7 +28,6 @@ class Game {
     public static final int INF = 100;
     public int q;
     public char[] board;
-
 
     public Game() {
       player1=new Player();
@@ -312,7 +310,6 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
       game.state=game.checkState(game.board);
 
-
       if(game.state==State.XWIN) {
         JOptionPane.showMessageDialog(null,"Выиграли крестики","Результат", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
@@ -325,11 +322,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
       else if(game.state==State.DRAW) {
         JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
-      } 
-
-
-
-
+      }
    }
 }
 
