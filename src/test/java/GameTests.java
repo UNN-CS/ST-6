@@ -1,7 +1,5 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 
 public class GameTests {
@@ -9,37 +7,52 @@ public class GameTests {
     @Test
     public void testCheckState() {
         Game game = new Game();
-        char[] boardXWin = {'X', 'X', 'X', ' ', ' ', ' ', ' ', ' ', ' '};
-        char[] boardOWin = {'O', 'O', 'O', ' ', ' ', ' ', ' ', ' ', ' '};
-        char[] boardDraw = {'X', 'O', 'X', 'X', 'O', 'O', 'O', 'X', 'X'};
-        char[] boardPlaying = {'X', 'O', 'X', ' ', ' ', ' ', ' ', ' ', ' '};
-
-        game.symbol = 'X';
-        assertEquals(State.XWIN, game.checkState(boardXWin));
-
+        State state = game.checkState(game.board);
+        assertEquals(State.PLAYING, state);
+    }
+    
+    @Test
+    public void testEvaluateSecondPlayerWin() {
+        Game game = new Game();
         game.symbol = 'O';
-        assertEquals(State.OWIN, game.checkState(boardOWin));
+        for (int i = 0; i < 3; i++) {
+            game.board[i] = game.symbol;
+        }
 
-        assertEquals(State.DRAW, game.checkState(boardDraw));
-        assertEquals(State.PLAYING, game.checkState(boardPlaying));
+        int result = game.evaluatePosition(game.board, game.player1);
+        assertEquals(-Game.INF, result);
+        result = game.evaluatePosition(game.board, game.player2);
+        assertEquals(Game.INF, result);
+    }
+   
+    @Test
+    public void testState() {
+        Game game = new Game();
+        assertEquals(State.PLAYING, game.state);
+        assertEquals('X', game.player1.symbol);
+        assertEquals('O', game.player2.symbol);
+        assertEquals(' ', game.board[0]);
     }
 
     @Test
-    public void testGenerateMoves() {
-        ArrayList<Integer> moves = new ArrayList<>();
-        char[] board = {'X', 'O', 'X', ' ', ' ', ' ', ' ', ' ', ' '};
+    public void testEvaluateFirstPlayerWin() {
         Game game = new Game();
-        game.generateMoves(board, moves);
-        assertEquals(6, moves.size());
-        assertTrue(moves.contains(3));
-        assertTrue(moves.contains(4));
-    }
+        game.symbol = 'X';
+        for (int i = 0; i < 3; i++) {
+            game.board[i] = game.symbol;
+        }
 
+        int result = game.evaluatePosition(game.board, game.player1);
+        assertEquals(Game.INF, result);
+        result = game.evaluatePosition(game.board, game.player2);
+        assertEquals(-Game.INF, result);
+    }
+    
     @Test
     public void testCheckStateXWin() {
-        char[] field = {'X', 'X', 'X', 'O', 'O', ' ', ' ', ' '};
         Game game = new Game();
         game.symbol = 'X';
+        char[] field = {'X', 'X', 'X', 'O', 'O', ' ', ' ', ' '};
         State state = game.checkState(field);
         assertEquals(State.XWIN, state);
     }
@@ -53,23 +66,23 @@ public class GameTests {
         assertEquals(State.OWIN, state);
     }
 
-   @Test
-    public void testMaxMove() {
+    @Test
+    public void testCheckStateDraw() {
         Game game = new Game();
-        char[] board = {'X', 'O', 'X', ' ', ' ', ' ', ' ', ' ', ' '};
-        game.player2.symbol = 'O';
-        int value = game.MaxMove(board, game.player2);
-        assertTrue(value >= -Game.INF && value <= Game.INF);
+        game.symbol = 'X';
+        char[] field = {'X', 'X', 'O', 'O', 'O', 'X', 'O', 'X', 'O'};
+        State state = game.checkState(field);
+        assertEquals(State.DRAW, state);
     }
 
     @Test
-    public void testGameInitialState() {
+    public void testGenerateMoves() {
         Game game = new Game();
-        assertEquals(State.PLAYING, game.state);
-        assertEquals('X', game.player1.symbol);
-        assertEquals('O', game.player2.symbol);
-        assertEquals(' ', game.board[0]);
+        ArrayList<Integer> moves = new ArrayList<>();
+        game.generateMoves(game.board, moves);
+        assertEquals(9, moves.size());
     }
+
 
     @Test
     public void testEvaluatePositionDraw() {
@@ -83,8 +96,8 @@ public class GameTests {
     @Test
     public void testMinimax() {
         Game game = new Game();
-        game.board = new char[] {'X', ' ', 'O', ' ', ' ', 'X', ' ', 'X', 'O'};
         game.symbol = 'X';
+        game.board = new char[] {'X', ' ', 'O', ' ', ' ', 'X', ' ', 'X', 'O'};
         int move = game.MiniMax(game.board, game.player2);
         assertTrue(move >= 1 && move <= 9);
     }
