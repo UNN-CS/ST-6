@@ -1,3 +1,5 @@
+package org.example;
+
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
 
@@ -283,10 +285,6 @@ class TicTacToePanel extends JPanel implements ActionListener {
    public void actionPerformed(ActionEvent ae) {
       game.player1.move = -1;
       game.player2.move = -1;
-      //System.out.println(game.cplayer.symbol);
-      //System.out.println(((TicTacToeCell)(ae.getSource())).getNum());
-
-
       int i=0;
       for(TicTacToeCell jb: cells) {
          if(ae.getSource()==jb) {
@@ -332,5 +330,3 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
    }
 }
-
-
