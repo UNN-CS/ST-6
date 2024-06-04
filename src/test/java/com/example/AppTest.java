@@ -83,6 +83,7 @@ public class AppTest {
         game.board = new char[]{'O', 'X', 'X', 'X', 'O', 'O', 'X', 'O', 'X'};
         assertEquals(0, game.evaluatePosition(game.board, game.player1));
     }
+    
 
     @Test
     public void testMinimax() {
