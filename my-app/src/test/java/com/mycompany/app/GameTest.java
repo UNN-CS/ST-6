@@ -114,4 +114,48 @@ public class GameTest {
         int val = game.evaluatePosition(draw, game.player1);
         assertEquals(0, val, "Ничья должна оцениваться как 0");
     }
+    @Test
+    public void testMiniMaxOnEmptyBoard() {
+        Game game = new Game();
+        game.player2.symbol = 'O';
+
+        char[] empty = {
+            ' ', ' ', ' ',
+            ' ', ' ', ' ',
+            ' ', ' ', ' '
+        };
+        game.board = Arrays.copyOf(empty, 9);
+
+        int move = game.MiniMax(game.board, game.player2);
+        assertTrue(VALID_MOVES.contains(move), "Ход должен быть от 1 до 9");
+     }
+    @Test
+    public void testMiniMaxWithOneMoveLeft() {
+        Game game = new Game();
+        game.player2.symbol = 'O';
+
+        char[] almostFull = {
+            'X','O','X',
+            'X','O','O',
+            'O','X',' '
+        };
+        game.board = Arrays.copyOf(almostFull, 9);
+
+        int move = game.MiniMax(game.board, game.player2);
+        assertEquals(9, move, "Единственный возможный ход — 9");
+    }
+    @Test
+    public void testCheckStateDraw() {
+        Game game = new Game();
+        char[] draw = {
+            'X','O','X',
+            'X','O','O',
+            'O','X','X'
+        };
+        game.symbol = 'X';
+        State result = game.checkState(draw);
+        assertEquals(State.DRAW, result);
+    }
+
+
 }
