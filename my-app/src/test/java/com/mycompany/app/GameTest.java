@@ -99,7 +99,6 @@ public class GameTest {
         game.makeMove(Program.O, 0, 2);
         assertEquals(10, game.evaluate());
     }
-    
     @Test
     public void testEvaluateLoss() {
         Program game = new Program();
