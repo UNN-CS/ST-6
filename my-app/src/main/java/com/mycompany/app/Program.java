@@ -24,21 +24,21 @@ public class Program {
     }
     
     public int checkWinner() {
-        // Check rows
+        // Проверка строк
         for (int i = 0; i < 3; i++) {
             if (board[i][0] != EMPTY && board[i][0] == board[i][1] && board[i][0] == board[i][2]) {
                 return board[i][0];
             }
         }
         
-        // Check columns
+        // Проверка столбцов
         for (int j = 0; j < 3; j++) {
             if (board[0][j] != EMPTY && board[0][j] == board[1][j] && board[0][j] == board[2][j]) {
                 return board[0][j];
             }
         }
         
-        // Check diagonals
+        // Проверка диагоналей
         if (board[0][0] != EMPTY && board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
             return board[0][0];
         }
@@ -46,7 +46,7 @@ public class Program {
             return board[0][2];
         }
         
-        // Check for draw
+        // Проверка на ничью
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == EMPTY) {
@@ -114,14 +114,16 @@ public class Program {
         }
     }
     
-    private int evaluate() {
+    // Изменено с private на public для тестирования
+    public int evaluate() {
         int winner = checkWinner();
         if (winner == O) return 10;
         if (winner == X) return -10;
         return 0;
     }
     
-    private boolean isBoardFull() {
+    // Изменено с private на public для тестирования
+    public boolean isBoardFull() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == EMPTY) {
