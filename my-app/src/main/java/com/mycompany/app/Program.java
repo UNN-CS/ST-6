@@ -1,3 +1,5 @@
+package com.mycompany.app;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -21,7 +23,7 @@ class Game {
     public State state;
     public Player player1, player2;
     public Player cplayer;
-    public int nmove; 
+    public int nmove;
     public char symbol;
     public static final int INF = 100;
     public int q;
@@ -69,7 +71,7 @@ class Game {
     return state;
   }
    void generateMoves(char[] board, ArrayList<Integer> move_list) {
-      for (int i = 0; i < 9; i++) 
+    for (int i = 0; i < 9; i++) 
         if (board[i] == ' ') 
             move_list.add(i);
    }
@@ -294,9 +296,9 @@ class TicTacToePanel extends JPanel implements ActionListener {
        }
        else
        {
-          game.nmove = game.player1.move;
-          game.symbol = game.player1.symbol;
-          game.cplayer = game.player1;
+         game.nmove = game.player1.move;
+         game.symbol = game.player1.symbol;
+         game.cplayer = game.player1;
        }
 
       game.state=game.checkState(game.board);
@@ -314,11 +316,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
       else if(game.state==State.DRAW) {
         JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
-      } 
-
-
-
-
+      }
    }
 }
 
