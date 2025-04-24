@@ -1,5 +1,4 @@
-// Реализация игры "Крестики-нолики" (3x3)
-// Минимаксный алгоритм
+package com.mycompany.app;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -332,5 +331,4 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
    }
 }
-
 
