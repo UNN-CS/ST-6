@@ -27,7 +27,7 @@ jobs:
       working-directory: my-app
 
     - name: Run the Maven verify phase
-      run: mvn --batch-mode --update-snapshots verify -f my-app/pow.xml
+      run: mvn --batch-mode --update-snapshots verify -f my-app/pom.xml
       working-directory: my-app
 
       
