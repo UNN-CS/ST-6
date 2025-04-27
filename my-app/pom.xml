@@ -84,17 +84,21 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
-          <configuration>
-            <forkCount>1</forkCount>
-            <testFailureIgnore>true</testFailureIgnore>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <forkCount>1</forkCount>
+          <testFailureIgnore>true</testFailureIgnore>
+          <systemPropertyVariables>
+            <java.awt.headless>true</java.awt.headless>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
       <!-- Move JaCoCo plugin outside of pluginManagement -->
       <plugin>
         <groupId>org.jacoco</groupId>

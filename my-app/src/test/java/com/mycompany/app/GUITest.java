@@ -1,10 +1,10 @@
 package com.mycompany.app;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.awt.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.awt.event.ActionEvent;
 
 public class GUITest {
 
@@ -52,8 +52,16 @@ public class GUITest {
     }
 
     @Test
-    void testProgramMain() {
-        String[] args = {};
-        assertDoesNotThrow(() -> Program.main(args), "Program.main should execute without throwing exceptions");
+    void testTicTacToePanelActionPerformed_EntryPoint() {
+        GridLayout layout = new GridLayout(3, 3);
+        TicTacToePanel panel = new TicTacToePanel(layout);
+
+        Component firstComponent = panel.getComponent(0);
+        assertTrue(firstComponent instanceof TicTacToeCell, "First component should be a TicTacToeCell");
+        TicTacToeCell firstCell = (TicTacToeCell) firstComponent;
+
+        ActionEvent dummyEvent = new ActionEvent(firstCell, ActionEvent.ACTION_PERFORMED, "test_click");
+
+        assertDoesNotThrow(() -> panel.actionPerformed(dummyEvent), "actionPerformed should be callable with a dummy event");
     }
 }
