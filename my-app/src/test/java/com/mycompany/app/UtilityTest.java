@@ -36,4 +36,16 @@ public class UtilityTest {
         ArrayList<Integer> moves = new ArrayList<>();
         Utility.print(moves);
     }
+
+    @Test
+    public void testPrintIntArray() {
+        int[] board = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Utility.print(board);
+    }
+
+    @Test
+    public void testPrintEmptyIntArray() {
+        int[] board = new int[9];
+        Utility.print(board);
+    }
 }
