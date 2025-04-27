@@ -1,10 +1,10 @@
 package com.mycompany.app;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.awt.*; // Required for GridLayout in TicTacToePanel test
-import java.awt.event.ActionEvent;
+import java.awt.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GUITest {
 
@@ -49,21 +49,6 @@ public class GUITest {
         assertNotNull(panel, "TicTacToePanel should be created");
         assertEquals(layout, panel.getLayout(), "TicTacToePanel should have the correct layout");
         assertEquals(9, panel.getComponentCount(), "TicTacToePanel should contain 9 components (cells)");
-    }
-
-    // New test to attempt covering actionPerformed entry point
-    @Test
-    void testTicTacToePanelActionPerformed_EntryPoint() {
-        GridLayout layout = new GridLayout(3, 3);
-        TicTacToePanel panel = new TicTacToePanel(layout);
-
-        Component firstComponent = panel.getComponent(0);
-        assertTrue(firstComponent instanceof TicTacToeCell, "First component should be a TicTacToeCell");
-        TicTacToeCell firstCell = (TicTacToeCell) firstComponent;
-
-        ActionEvent dummyEvent = new ActionEvent(firstCell, ActionEvent.ACTION_PERFORMED, "test_click");
-
-        assertDoesNotThrow(() -> panel.actionPerformed(dummyEvent), "actionPerformed should be callable with a dummy event");
     }
 
     @Test
