@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.mycompany.app.UtilityTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.020 s <<< FAILURE! -- in com.mycompany.app.UtilityTest
+com.mycompany.app.UtilityTest.testPrintIntArray -- Time elapsed: 0.007 s <<< ERROR!
+java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at com.mycompany.app.Utility.print(Program.java:244)
+	at com.mycompany.app.UtilityTest.testPrintIntArray(UtilityTest.java:17)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.mycompany.app.UtilityTest.testPrintCharArray -- Time elapsed: 0.011 s <<< ERROR!
+java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at com.mycompany.app.Utility.print(Program.java:238)
+	at com.mycompany.app.UtilityTest.testPrintCharArray(UtilityTest.java:11)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
