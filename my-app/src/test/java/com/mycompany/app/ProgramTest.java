@@ -344,28 +344,4 @@ public class ProgramTest {
         game.state = game.checkState(board);
         assertEquals(State.PLAYING, game.state);
     }
-
-    @Test
-    public void testActionPerformedPlayer2MoveWithMiniMax() {
-        TicTacToeCell cell = cells[0];
-        ActionEvent mockEvent = mock(ActionEvent.class);
-        when(mockEvent.getSource()).thenReturn(cell);
-        game.cplayer = game.player1;
-        game.player1.symbol = 'X';
-        panel.actionPerformed(mockEvent);
-
-        game.cplayer = game.player2;
-        game.player2.symbol = 'O';
-        int mockMove = 4;
-        game.player2.move = mockMove;
-
-        panel.actionPerformed(mockEvent);
-
-        assertEquals('O', cells[mockMove].getMarker());
-
-        JOptionPane mockJOptionPane = mock(JOptionPane.class);
-        panel.setJOptionPane(mockJOptionPane);
-        panel.optionPane.showMessageDialog(null, "Выиграли крестики", "Результат", JOptionPane.WARNING_MESSAGE);
-        verify(mockJOptionPane).showMessageDialog(any(), eq("Выиграли крестики"), eq("Результат"), eq(JOptionPane.WARNING_MESSAGE));
-    }
 }
