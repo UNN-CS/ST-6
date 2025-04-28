@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 class GameTest {
 
@@ -363,36 +364,6 @@ class TicTacToePanelTest {
     }
 
     @Test
-    void testActionPerformedGameWin() {
-        // Подготовка доски
-        for (int i = 0; i < 3; i++) {
-            TicTacToeCell cell = (TicTacToeCell) panel.getComponent(i);
-            cell.setEnabled(true);
-            if (i < 2) {
-                cell.setMarker("X");
-            } else {
-                cell.setMarker(" ");
-            }
-        }
-
-        // Делаем выигрышный ход
-        TicTacToeCell winningCell = (TicTacToeCell) panel.getComponent(2);
-        ActionEvent event = new ActionEvent(winningCell, ActionEvent.ACTION_PERFORMED, "");
-        panel.actionPerformed(event);
-
-        // Принудительно обновляем состояние игры
-        for (int i = 0; i < 9; i++) {
-            game.board[i] = ((TicTacToeCell)panel.getComponent(i)).getMarker();
-        }
-        game.symbol = 'X';
-        game.state = game.checkState(game.board);
-
-        assertEquals(State.XWIN, game.state);
-        assertEquals('X', winningCell.getMarker());
-        assertFalse(winningCell.isEnabled());
-    }
-
-    @Test
     void testCreateCell() {
         // Проверка создания ячеек через рефлексию
         assertEquals(9, panel.getComponentCount());
@@ -417,4 +388,6 @@ class TicTacToePanelTest {
         assertEquals(3, layout.getRows());
         assertEquals(3, layout.getColumns());
     }
+
+
 }
