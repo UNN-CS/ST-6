@@ -1,4 +1,4 @@
-
+package com.mycompany.app;
 
 import java.awt.*;
 import java.awt.event.*;
