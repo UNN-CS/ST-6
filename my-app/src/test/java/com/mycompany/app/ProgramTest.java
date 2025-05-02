@@ -1,8 +1,5 @@
 package com.mycompany.app;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import jdk.jshell.execution.Util;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -10,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ProgramTest {
     @Test
