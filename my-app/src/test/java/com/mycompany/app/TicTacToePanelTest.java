@@ -1,7 +1,9 @@
 package com.mycompany.app;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.awt.GridLayout;
+
+import java.awt.*;
+import javax.swing.JPanel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,14 +23,14 @@ class TicTacToePanelTest {
 
     @Test
     void testAllCellsAreTicTacToeCell() {
-        for (var comp : panel.getComponents()) {
+        for (Component comp : panel.getComponents()) {
             assertTrue(comp instanceof TicTacToeCell);
         }
     }
 
     @Test
     void testInitialCellsEnabled() {
-        for (var comp : panel.getComponents()) {
+        for (Component comp : panel.getComponents()) {
             TicTacToeCell c = (TicTacToeCell) comp;
             assertTrue(c.isEnabled());
             assertEquals(' ', c.getMarker());
