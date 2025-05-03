@@ -207,13 +207,14 @@ public class AppTest {
     }
 
     @Test
-    void testProgramMain() {
-        try {
-            Program.main(new String[]{});
-        } catch (java.io.IOException e) {
-            fail("Unexpected IOException during Program.main execution: " + e.getMessage());
-        }
-    }
+	void testProgramMain() {
+		try {
+			System.setProperty("java.awt.headless", "true");
+			Program.main(new String[]{});
+		} catch (java.io.IOException e) {
+			fail("Unexpected IOException during Program.main execution: " + e.getMessage());
+		}
+	}
 
     @Test
     void testTicTacToePanelActionPerformed() {
