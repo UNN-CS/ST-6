@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.awt.GridLayout;
+import java.awt.Component;
 
 class ProgramTest  {
 
@@ -123,7 +125,7 @@ class ProgramTest  {
         game.board = new char[]{'X', 'O', ' ', 'O', 'X', ' ', ' ', ' ', ' '};
         Player player = game.player1;
         int bestMove = game.MiniMax(game.board, player);
-        List<Integer> expectedMoves = List.of(3, 7, 9);
+        List<Integer> expectedMoves = Arrays.asList(3, 7, 9);
         assertTrue(expectedMoves.contains(bestMove),
                 "Минимакс вернул неожиданный ход: " + bestMove);
     }
@@ -204,14 +206,14 @@ class ProgramTest  {
 
     @Test
     void testAllComponentsAreTicTacToeCellInstances() {
-        for (var component : panel.getComponents()) {
+        for (Component  component : panel.getComponents()) {
             assertTrue(component instanceof TicTacToeCell, "Компонент не является экземпляром TicTacToeCell");
         }
     }
 
     @Test
     void testCellsInitialState() {
-        for (var component : panel.getComponents()) {
+        for (Component component : panel.getComponents()) {
             TicTacToeCell cell = (TicTacToeCell) component;
             assertTrue(cell.isEnabled(), "Ячейка должна быть активной по умолчанию");
             assertEquals(' ', cell.getMarker(), "Ячейка должна быть пустой при инициализации");
@@ -237,7 +239,7 @@ class ProgramTest  {
             cell.setEnabled(false);
         }
 
-        for (var component : panel.getComponents()) {
+        for (Component component : panel.getComponents()) {
             TicTacToeCell cell = (TicTacToeCell) component;
             assertFalse(cell.isEnabled(), "Все ячейки должны быть неактивны после окончания игры");
         }
@@ -267,7 +269,7 @@ class ProgramTest  {
 
     @Test
     void testPanelIsEmptyAtTheStart() {
-        for (var component : panel.getComponents()) {
+        for (Component component : panel.getComponents()) {
             TicTacToeCell cell = (TicTacToeCell) component;
             assertEquals(' ', cell.getMarker(), "Ячейка должна быть пустой в начале игры");
         }
