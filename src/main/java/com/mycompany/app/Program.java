@@ -1,3 +1,4 @@
+package com.mycompany.app;
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
 
@@ -197,7 +198,7 @@ public class Program {
 }
 
 class TicTacToeCell extends JButton {
-    private boolean isFill;
+    //private boolean isFill;
     private int num;
     private int row;
     private int col;
