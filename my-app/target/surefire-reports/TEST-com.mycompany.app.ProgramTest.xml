@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.157" tests="13" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="C:\Users\milov\code\ST-6\my-app\target\test-classes;C:\Users\milov\code\ST-6\my-app\target\classes;C:\Users\milov\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\milov\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\milov\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\milov\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\milov\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\milov\AppData\Local\Temp\surefire6540257351538807787\surefirebooter-20250505171706095_3.jar C:\Users\milov\AppData\Local\Temp\surefire6540257351538807787 2025-05-05T17-17-05_966-jvmRun1 surefire-20250505171706095_1tmp surefire_0-20250505171706095_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\milov\code\ST-6\my-app\target\test-classes;C:\Users\milov\code\ST-6\my-app\target\classes;C:\Users\milov\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\milov\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\milov\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\milov\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\milov\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\milov"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-08-12"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\milov\code\ST-6\my-app"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\milov\AppData\Local\Temp\surefire6540257351538807787\surefirebooter-20250505171706095_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.4.1+1"/>
+    <property name="user.name" value="lizardwizard"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.4.1+1"/>
+    <property name="localRepository" value="C:\Users\milov\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\milov\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.4.1"/>
+    <property name="user.dir" value="C:\Users\milov\code\ST-6\my-app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft MPI\Bin\;F:\Programs\QT\6.5.0\mingw_64;C:\Users\milov\Desktop;F:\Programs\QT\6.5.0;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;F:\Programs\ffmpeg-6.0-full_build\bin;F:\Python\Scripts\;F:\Python\;C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;F:\Programs\msys64\mingw64\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Programs\TortoiseGit\bin;F:\Programs\Gpg4win\..\GnuPG\bin;C:\ProgramData\chocolatey\bin;F:\Programs\Git\cmd;F:\Programs\CMake\bin;C:\Program Files\dotnet\;F:\Programs\QT\Tools\mingw1120_64\bin;F:\mingw\bin;F:\mingw\mingw32\bin;F:\opencv-build\bin;C:\go\bin;C:\Program Files\AmneziaWG\;F:\Programs\GitExt\;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Users\milov\AppData\Local\Microsoft\WindowsApps;F:\Programs\Microsoft VS Code\bin;C:\tools\msys64;F:\Python;F:\OpenCV\opencv\build\x64\vc16\bin;C:\Users\milov\.dotnet\tools;C:\Users\milov\go\bin;C:\IntelliJ IDEA Community Edition 2024.2\bin;;C:\Users\milov\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\milov\AppData\Roaming\npm;C:\Program Files (x86)\Mikero\DePboTools\bin;F:\Programs\cursor\resources\app\bin;F:\code\IntelliJ IDEA Community Edition 2024.3.4.1\bin;;C:\Users\milov\AppData\Local\spicetify;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.4.1+1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testCheckStateDraw" classname="com.mycompany.app.ProgramTest" time="0.026"/>
+  <testcase name="testCheckStateOWin" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCheckStateXWin" classname="com.mycompany.app.ProgramTest" time="0.0"/>
+  <testcase name="testEvaluatePosition" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToePanelCreation" classname="com.mycompany.app.ProgramTest" time="0.074"/>
+  <testcase name="testCellInitializationAndMarkerSetting" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testCheckStatePlaying" classname="com.mycompany.app.ProgramTest" time="0.0"/>
+  <testcase name="testGenerateAvailableMoves" classname="com.mycompany.app.ProgramTest" time="0.0"/>
+  <testcase name="testGameInitialization" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testUtilityPrinting" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testMaxMove" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testMinMove" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testMiniMaxAlgorithm" classname="com.mycompany.app.ProgramTest" time="0.015">
+    <system-out><![CDATA[
+minimax:   2(-100) 
+minimax:   6(0) 
+minimax:   8(100) 
+minimax best:   8(100) Steps counted: 5
+minimax:   5(100) 
+minimax:   6(-100) 
+minimax:   8(-100) 
+minimax:   9(-100) 
+minimax best:   5(100) Steps counted: 23
+minimax:   3(0) 
+minimax:   6(100) 
+minimax:   8(-100) 
+minimax:   9(-100) 
+minimax best:   6(100) Steps counted: 20
+minimax:   2(-100) 
+minimax:   4(-100) 
+minimax:   6(-100) 
+minimax:   8(-100) 
+minimax best:   4(-100) Steps counted: 18
+minimax:   2(-100) 
+minimax:   3(-100) 
+minimax:   4(-100) 
+minimax:   5(0) 
+minimax:   6(-100) 
+minimax:   7(-100) 
+minimax:   8(-100) 
+minimax:   9(-100) 
+minimax best:   5(0) Steps counted: 31972
+minimax:   6(-100) 
+minimax:   8(0) 
+minimax best:   8(0) Steps counted: 2
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   8(0) Steps counted: 2
+minimax:   3(0) 
+minimax:   6(100) 
+minimax:   8(-100) 
+minimax:   9(-100) 
+minimax best:   6(100) Steps counted: 20
+minimax:   2(-100) 
+minimax:   4(-100) 
+minimax:   6(-100) 
+minimax:   8(-100) 
+minimax best:   6(-100) Steps counted: 18]]></system-out>
+  </testcase>
+</testsuite>
