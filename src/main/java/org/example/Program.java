@@ -255,7 +255,7 @@ class Utility {
 
 class TicTacToePanel extends JPanel implements ActionListener {
 
-   private Game game;
+   public Game game;
 
    private void createCell(int num,int x,int y) {
        cells[num]=new TicTacToeCell(num,x,y);
@@ -264,7 +264,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
    }
 
-   private TicTacToeCell[] cells = new TicTacToeCell[9];
+   public TicTacToeCell[] cells = new TicTacToeCell[9];
    TicTacToePanel(GridLayout layout) {
        super(layout);
        createCell(0,0,0);
