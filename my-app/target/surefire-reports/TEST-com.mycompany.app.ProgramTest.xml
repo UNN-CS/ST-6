@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.157" tests="13" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.16" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.4.101-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\milov\AppData\Local\Temp\surefire6540257351538807787\surefirebooter-20250505171706095_3.jar C:\Users\milov\AppData\Local\Temp\surefire6540257351538807787 2025-05-05T17-17-05_966-jvmRun1 surefire-20250505171706095_1tmp surefire_0-20250505171706095_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\milov\AppData\Local\Temp\surefire13244030688168116211\surefirebooter-20250505171755648_3.jar C:\Users\milov\AppData\Local\Temp\surefire13244030688168116211 2025-05-05T17-17-55_518-jvmRun1 surefire-20250505171755648_1tmp surefire_0-20250505171755648_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\milov\code\ST-6\my-app\target\test-classes;C:\Users\milov\code\ST-6\my-app\target\classes;C:\Users\milov\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\milov\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\milov\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\milov\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\milov\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\milov\AppData\Local\Temp\surefire6540257351538807787\surefirebooter-20250505171706095_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\milov\AppData\Local\Temp\surefire13244030688168116211\surefirebooter-20250505171755648_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.4.1+1"/>
@@ -58,17 +58,17 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCheckStateDraw" classname="com.mycompany.app.ProgramTest" time="0.026"/>
+  <testcase name="testCheckStateDraw" classname="com.mycompany.app.ProgramTest" time="0.029"/>
   <testcase name="testCheckStateOWin" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testCheckStateXWin" classname="com.mycompany.app.ProgramTest" time="0.0"/>
+  <testcase name="testCheckStateXWin" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testEvaluatePosition" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testTicTacToePanelCreation" classname="com.mycompany.app.ProgramTest" time="0.074"/>
+  <testcase name="testTicTacToePanelCreation" classname="com.mycompany.app.ProgramTest" time="0.075"/>
   <testcase name="testCellInitializationAndMarkerSetting" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testCheckStatePlaying" classname="com.mycompany.app.ProgramTest" time="0.0"/>
   <testcase name="testGenerateAvailableMoves" classname="com.mycompany.app.ProgramTest" time="0.0"/>
-  <testcase name="testGameInitialization" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testUtilityPrinting" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testMaxMove" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testGameInitialization" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testUtilityPrinting" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="testMaxMove" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testMinMove" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testMiniMaxAlgorithm" classname="com.mycompany.app.ProgramTest" time="0.015">
     <system-out><![CDATA[
@@ -90,7 +90,7 @@ minimax:   2(-100)
 minimax:   4(-100) 
 minimax:   6(-100) 
 minimax:   8(-100) 
-minimax best:   4(-100) Steps counted: 18
+minimax best:   0(-100) Steps counted: 18
 minimax:   2(-100) 
 minimax:   3(-100) 
 minimax:   4(-100) 

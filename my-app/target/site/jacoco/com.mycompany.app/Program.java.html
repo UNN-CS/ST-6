@@ -123,9 +123,9 @@ class Game {
 <span class="fc" id="L123">        board[move_list.get(0)] = ' '; </span>
 <span class="fc" id="L124">        move_list.remove(0);</span>
 <span class="fc" id="L125">    }</span>
-<span class="pc bpc" id="L126" title="1 of 2 branches missed.">    if (index &gt; 0)  {</span>
-<span class="nc" id="L127">      Random r = new Random();</span>
-<span class="nc" id="L128">      index = r.nextInt(index);</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">    if (index &gt; 0)  {</span>
+<span class="fc" id="L127">      Random r = new Random();</span>
+<span class="fc" id="L128">      index = r.nextInt(index);</span>
     }
    
 <span class="fc" id="L131">    System.out.printf(&quot;\nminimax best: %3d(%1d) &quot;, best_moves[index], best_val);</span>
