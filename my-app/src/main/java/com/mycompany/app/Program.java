@@ -327,10 +327,7 @@ class TicTacToePanel extends JPanel implements ActionListener {
         JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
       } 
-
-
-
-
+      
    }
 }
 
