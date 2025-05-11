@@ -22,4 +22,5 @@ class UtilityTest {
         moves.add(2);
         Utility.print(moves);
     }
+    
 }
