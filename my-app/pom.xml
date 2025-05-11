@@ -43,7 +43,7 @@
   </dependencies>
 
   <build>
-  <plugins>
+    <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.3.0</version>
@@ -52,7 +52,7 @@
           <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
-            <!-- Move JaCoCo plugin outside of pluginManagement -->
+      <!-- Move JaCoCo plugin outside of pluginManagement -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>

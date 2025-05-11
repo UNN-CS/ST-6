@@ -126,7 +126,7 @@ public class AppTest {
         assertEquals('X', cell.getMarker());
         assertFalse(cell.isEnabled());
     }
-    
+
 
     @Test
     public void testPlayerSwitch() {
