@@ -69,6 +69,7 @@ class AppTests {
         }
     }
 
+
     @Nested
     class GenerateMovesTests {
         @Test
