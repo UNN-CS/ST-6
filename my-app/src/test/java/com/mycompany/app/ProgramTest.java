@@ -1,7 +1,9 @@
 package com.mycompany.app;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -69,7 +71,6 @@ public class ProgramTest {
         game.player1.symbol = 'X';
         assertEquals(-Game.INF, game.evaluatePosition(board, game.player1));
     }
-
 
     @Test
     public void testPlayerFields() {
@@ -181,8 +182,8 @@ public class ProgramTest {
     }
 
     @Test
-    public void testAppMainLogic() {
-        App.main(new String[]{});
+    public void testAppMainLogic() throws IOException {
+        Program.main(new String[]{});
         assertTrue(true);
     }
 
