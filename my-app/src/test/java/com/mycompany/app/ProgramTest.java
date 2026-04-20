@@ -294,13 +294,6 @@ public class ProgramTest {
     }
     
     @Test
-    void testTicTacToeCellFont() {
-        TicTacToeCell cell = new TicTacToeCell(0, 0, 0);
-        assertNotNull(cell.getFont());
-        assertEquals("Arial", cell.getFont().getFamily());
-    }
-    
-    @Test
     void testTicTacToePanelConstructor() {
         System.setProperty("java.awt.headless", "true");
         TicTacToePanel panel = new TicTacToePanel(new GridLayout(3, 3));

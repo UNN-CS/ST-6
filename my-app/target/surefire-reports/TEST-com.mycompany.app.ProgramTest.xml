@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="2.039" tests="44" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="1.918" tests="43" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="26"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26\bin"/>
-    <property name="sun.java.command" value="C:\Users\rabat\AppData\Local\Temp\surefire552557009574841005\surefirebooter-20260420231923119_3.jar C:\Users\rabat\AppData\Local\Temp\surefire552557009574841005 2026-04-20T23-19-22_914-jvmRun1 surefire-20260420231923119_1tmp surefire_0-20260420231923119_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\rabat\AppData\Local\Temp\surefire2442024881545331747\surefirebooter-20260420232834675_3.jar C:\Users\rabat\AppData\Local\Temp\surefire2442024881545331747 2026-04-20T23-28-34_394-jvmRun1 surefire-20260420232834675_1tmp surefire_0-20260420232834675_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\rabat\ST-6\my-app\target\test-classes;C:\Users\rabat\ST-6\my-app\target\classes;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rabat\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rabat\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rabat\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\rabat\AppData\Local\Temp\surefire552557009574841005\surefirebooter-20260420231923119_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\rabat\AppData\Local\Temp\surefire2442024881545331747\surefirebooter-20260420232834675_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="26+35-2893"/>
@@ -61,8 +61,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="70.0"/>
   </properties>
-  <testcase name="testCheckStateOWinVertical" classname="com.mycompany.app.ProgramTest" time="0.047"/>
-  <testcase name="testMultipleBestMovesRandomSelection" classname="com.mycompany.app.ProgramTest" time="0.097">
+  <testcase name="testCheckStateOWinVertical" classname="com.mycompany.app.ProgramTest" time="0.055"/>
+  <testcase name="testMultipleBestMovesRandomSelection" classname="com.mycompany.app.ProgramTest" time="0.121">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -155,14 +155,14 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testUtilityPrintArrayList" classname="com.mycompany.app.ProgramTest" time="0.016">
+  <testcase name="testUtilityPrintArrayList" classname="com.mycompany.app.ProgramTest" time="0.007">
     <system-out><![CDATA[
 1-3-5-
 ]]></system-out>
   </testcase>
-  <testcase name="testGenerateMovesAllEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.005"/>
-  <testcase name="testCheckStateWithDifferentSymbol" classname="com.mycompany.app.ProgramTest" time="0.003"/>
-  <testcase name="testTicTacToePanelGameStateAfterMove" classname="com.mycompany.app.ProgramTest" time="0.257">
+  <testcase name="testGenerateMovesAllEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCheckStateWithDifferentSymbol" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToePanelGameStateAfterMove" classname="com.mycompany.app.ProgramTest" time="0.273">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -174,15 +174,15 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testEvaluatePositionNotTerminal" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testEvaluatePositionNotTerminal" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testCheckStateDraw" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testUtilityPrintIntArray" classname="com.mycompany.app.ProgramTest" time="0.003">
+  <testcase name="testUtilityPrintIntArray" classname="com.mycompany.app.ProgramTest" time="0.004">
     <system-out><![CDATA[
 1-2-3-4-5-6-7-8-9-
 ]]></system-out>
   </testcase>
-  <testcase name="testMaxMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToePanelCellBecomesDisabledAfterClick" classname="com.mycompany.app.ProgramTest" time="0.157">
+  <testcase name="testMaxMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="testTicTacToePanelCellBecomesDisabledAfterClick" classname="com.mycompany.app.ProgramTest" time="0.154">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -194,8 +194,8 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelConstructor" classname="com.mycompany.app.ProgramTest" time="0.017"/>
-  <testcase name="testMiniMaxReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.053">
+  <testcase name="testTicTacToePanelConstructor" classname="com.mycompany.app.ProgramTest" time="0.006"/>
+  <testcase name="testMiniMaxReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.059">
     <system-out><![CDATA[
 minimax:   1(0) 
 minimax:   2(0) 
@@ -206,11 +206,11 @@ minimax:   6(0)
 minimax:   7(0) 
 minimax:   8(0) 
 minimax:   9(0) 
-minimax best:   5(0) Steps counted: 294777]]></system-out>
+minimax best:   3(0) Steps counted: 294777]]></system-out>
   </testcase>
   <testcase name="testGameInitialState" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testCheckStateXWinVertical" classname="com.mycompany.app.ProgramTest" time="0.003"/>
-  <testcase name="testTicTacToePanelCannotClickSameCellTwice" classname="com.mycompany.app.ProgramTest" time="0.219">
+  <testcase name="testCheckStateXWinVertical" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToePanelCannotClickSameCellTwice" classname="com.mycompany.app.ProgramTest" time="0.222">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -222,7 +222,7 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testMiniMaxBlocksFork" classname="com.mycompany.app.ProgramTest" time="0.006">
+  <testcase name="testMiniMaxBlocksFork" classname="com.mycompany.app.ProgramTest" time="0.003">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(0) 
@@ -232,8 +232,7 @@ minimax:   7(0)
 minimax:   8(-100) 
 minimax best:   3(0) Steps counted: 636]]></system-out>
   </testcase>
-  <testcase name="testTicTacToeCellFont" classname="com.mycompany.app.ProgramTest" time="0.048"/>
-  <testcase name="testTicTacToePanelComputerDoesNotMoveOnEmptyCell" classname="com.mycompany.app.ProgramTest" time="0.144">
+  <testcase name="testTicTacToePanelComputerDoesNotMoveOnEmptyCell" classname="com.mycompany.app.ProgramTest" time="0.148">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -245,17 +244,17 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testCheckStateXWinHorizontal" classname="com.mycompany.app.ProgramTest" time="0.004"/>
-  <testcase name="testTicTacToeCellSetMarkerO" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToeCellSetMarkerX" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCheckStateXWinHorizontal" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToeCellSetMarkerO" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToeCellSetMarkerX" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testCheckStateOWinHorizontal" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testEvaluatePositionWithNullPlayer" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToeCellAllCoordinates" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testMinMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testEvaluatePositionWithNullPlayer" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToeCellAllCoordinates" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testMinMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testTicTacToeCellConstructor" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testMinMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.059"/>
-  <testcase name="testMaxMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.037"/>
-  <testcase name="testMiniMaxOnEmptyBoardReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.045">
+  <testcase name="testMinMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.058"/>
+  <testcase name="testMaxMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.036"/>
+  <testcase name="testMiniMaxOnEmptyBoardReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.04">
     <system-out><![CDATA[
 minimax:   1(0) 
 minimax:   2(0) 
@@ -266,18 +265,18 @@ minimax:   6(0)
 minimax:   7(0) 
 minimax:   8(0) 
 minimax:   9(0) 
-minimax best:   5(0) Steps counted: 294777]]></system-out>
+minimax best:   7(0) Steps counted: 294777]]></system-out>
   </testcase>
-  <testcase name="testProgramMainMethod" classname="com.mycompany.app.ProgramTest" time="0.004"/>
-  <testcase name="testTicTacToePanelGameInitialization" classname="com.mycompany.app.ProgramTest" time="0.004"/>
+  <testcase name="testProgramMainMethod" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="testTicTacToePanelGameInitialization" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testCheckStateXWinDiagonal" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testTicTacToePanelCellsInitialization" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testUtilityPrintCharArray" classname="com.mycompany.app.ProgramTest" time="0.002">
+  <testcase name="testTicTacToePanelCellsInitialization" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testUtilityPrintCharArray" classname="com.mycompany.app.ProgramTest" time="0.001">
     <system-out><![CDATA[
 X-O- -X- -O- -X- -
 ]]></system-out>
   </testcase>
-  <testcase name="testProgramStaticFields" classname="com.mycompany.app.ProgramTest" time="0.01"/>
+  <testcase name="testProgramStaticFields" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testCheckStateNoWinnerNotFull" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testTicTacToePanelFirstMoveByX" classname="com.mycompany.app.ProgramTest" time="0.149">
     <system-out><![CDATA[
@@ -291,7 +290,7 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelMultipleMoves" classname="com.mycompany.app.ProgramTest" time="0.306">
+  <testcase name="testTicTacToePanelMultipleMoves" classname="com.mycompany.app.ProgramTest" time="0.29">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -310,8 +309,8 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   3(0) Steps counted: 477]]></system-out>
   </testcase>
-  <testcase name="testGenerateMovesNoEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testTicTacToePanelComputerResponds" classname="com.mycompany.app.ProgramTest" time="0.161">
+  <testcase name="testGenerateMovesNoEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToePanelComputerResponds" classname="com.mycompany.app.ProgramTest" time="0.149">
     <system-out><![CDATA[
 minimax:   1(0) 
 minimax:   2(-100) 
@@ -321,9 +320,9 @@ minimax:   6(-100)
 minimax:   7(0) 
 minimax:   8(-100) 
 minimax:   9(0) 
-minimax best:   7(0) Steps counted: 29632]]></system-out>
+minimax best:   3(0) Steps counted: 29632]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelAllCellsClickableInitially" classname="com.mycompany.app.ProgramTest" time="0.025"/>
-  <testcase name="testCheckStateOWinDiagonal2" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToePanelAllCellsClickableInitially" classname="com.mycompany.app.ProgramTest" time="0.004"/>
+  <testcase name="testCheckStateOWinDiagonal2" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testTicTacToeCellSetMarkerOverwrites" classname="com.mycompany.app.ProgramTest" time="0.002"/>
 </testsuite>
