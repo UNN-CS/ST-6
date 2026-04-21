@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 import java.awt.GridLayout;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -193,7 +194,7 @@ public class ProgramTest {
         Assertions.assertEquals(sep + "1-2-3-4-5-6-7-8-9-" + sep, testout.toString());
         testout.reset();
         
-        ArrayList<Integer> moves = new ArrayList<>(List.of(0, 2, 7, 8));
+        ArrayList<Integer> moves = new ArrayList<>(Arrays.asList(0, 2, 7, 8));
         utility.print(moves);
         Assertions.assertEquals(sep + "0-2-7-8-" + sep, testout.toString());
     }
