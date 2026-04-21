@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import java.util.ArrayList;
+import java.util.List;
 import java.awt.GridLayout;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -178,19 +179,26 @@ public class ProgramTest {
         Utility utility = new Utility();
         String sep = System.lineSeparator();
 
-        utility.print(new char[9]);
-        Assertions.assertEquals(sep + "\0-\0-\0-\0-\0-\0-\0-\0-\0-" + sep, testout.toString());
+        char[] board1 = {' ', 'O', ' ',
+                         'O', 'X', 'X',
+                         'X', ' ', ' '};
+        utility.print(board1);
+        Assertions.assertEquals(sep + " -O- -O-X-X-X- - -" + sep, testout.toString());
         testout.reset();
 
-        utility.print(new int[9]);
-        Assertions.assertEquals(sep + "0-0-0-0-0-0-0-0-0-" + sep, testout.toString());
+        int[] board2 = {1, 2, 3,
+                        4, 5, 6,
+                        7, 8, 9};
+        utility.print(board2);
+        Assertions.assertEquals(sep + "1-2-3-4-5-6-7-8-9-" + sep, testout.toString());
         testout.reset();
-
-        ArrayList<Integer> moves = new ArrayList<>();
-        moves.add(1);
+        
+        ArrayList<Integer> moves = new ArrayList<>(List.of(0, 2, 7, 8));
         utility.print(moves);
-        Assertions.assertEquals(sep + "1-" + sep, testout.toString());
+        Assertions.assertEquals(sep + "0-2-7-8-" + sep, testout.toString());
     }
+
+
 
     private char[] genWinState(char symbol, int winState) {
         char[] board = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
