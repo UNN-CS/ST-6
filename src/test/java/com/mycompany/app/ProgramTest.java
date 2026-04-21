@@ -2,10 +2,27 @@ package com.mycompany.app;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import java.util.ArrayList;
 import java.awt.GridLayout;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class ProgramTest {
+
+    private ByteArrayOutputStream testout = new ByteArrayOutputStream();
+    private PrintStream stdout = System.out;
+
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(testout));
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.setOut(stdout);
+    }
 
     @Test
     public void testPlayer() {
@@ -155,19 +172,26 @@ public class ProgramTest {
         TicTacToePanel panel = new TicTacToePanel(new GridLayout(3, 3));
         Assertions.assertNotNull(panel);
     }
-    
+
     @Test
     public void testUtility() {
-        char[] board = new char[9];
-        int[] intBoard = new int[9];
+        Utility utility = new Utility();
+        String sep = System.lineSeparator();
+
+        utility.print(new char[9]);
+        Assertions.assertEquals(sep + "\0-\0-\0-\0-\0-\0-\0-\0-\0-" + sep, testout.toString());
+        testout.reset();
+
+        utility.print(new int[9]);
+        Assertions.assertEquals(sep + "0-0-0-0-0-0-0-0-0-" + sep, testout.toString());
+        testout.reset();
+
         ArrayList<Integer> moves = new ArrayList<>();
         moves.add(1);
-
-        Utility.print(board);
-        Utility.print(intBoard);
-        Utility.print(moves);
+        utility.print(moves);
+        Assertions.assertEquals(sep + "1-" + sep, testout.toString());
     }
-    
+
     private char[] genWinState(char symbol, int winState) {
         char[] board = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
         switch (winState) {
