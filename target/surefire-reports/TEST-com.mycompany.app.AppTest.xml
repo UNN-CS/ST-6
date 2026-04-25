@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.AppTest" time="0.683" tests="43" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="E:\Projects\LearningProjects\ST-6\target\test-classes;E:\Projects\LearningProjects\ST-6\target\classes;C:\Users\andreypankov\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\andreypankov\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\andreypankov\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\andreypankov\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\andreypankov\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.0\junit-jupiter-engine-5.11.0.jar;C:\Users\andreypankov\.m2\repository\org\junit\platform\junit-platform-engine\1.11.0\junit-platform-engine-1.11.0.jar;"/>
+    <property name="java.vm.vendor" value="BellSoft"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://bell-sw.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\BellSoft\LibericaJDK-17-Full\bin"/>
+    <property name="sun.java.command" value="C:\Users\andreypankov\AppData\Local\Temp\surefire77426797760410999\surefirebooter-20260425153244937_3.jar C:\Users\andreypankov\AppData\Local\Temp\surefire77426797760410999 2026-04-25T15-32-44_476-jvmRun1 surefire-20260425153244937_1tmp surefire_0-20260425153244937_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="E:\Projects\LearningProjects\ST-6\target\test-classes;E:\Projects\LearningProjects\ST-6\target\classes;C:\Users\andreypankov\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\andreypankov\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\andreypankov\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\andreypankov\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\andreypankov\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.0\junit-jupiter-engine-5.11.0.jar;C:\Users\andreypankov\.m2\repository\org\junit\platform\junit-platform-engine\1.11.0\junit-platform-engine-1.11.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\andreypankov"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Program Files\BellSoft\LibericaJDK-17-Full"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="E:\Projects\LearningProjects\ST-6"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\andreypankov\AppData\Local\Temp\surefire77426797760410999\surefirebooter-20260425153244937_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.10+13-LTS"/>
+    <property name="user.name" value="andreypankov"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\andreypankov\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bell-sw.com/support"/>
+    <property name="java.io.tmpdir" value="C:\Users\ANDREY~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.10"/>
+    <property name="user.dir" value="E:\Projects\LearningProjects\ST-6"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\BellSoft\LibericaJDK-17-Full\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python311\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-8.0.422.5-hotspot\bin;C:\Program Files\BellSoft\LibericaJDK-17-Full\bin\;C:\Program Files\BellSoft\LibericaJDK-21-Full\bin\;C:\Program Files\Eclipse Adoptium\jdk-21.0.2.13-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-17.0.10.7-hotspot\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python311\Scripts\;C:\Python311\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\WireGuard\;C:\Program Files\Git\cmd;C:\Program Files (x86)\ZeroTier\One\;C:\ProgramData\chocolatey\bin;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.3.0\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\AmneziaWG\;C:\Program Files\nodejs\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\cursor\resources\app\bin;C:\Program Files (x86)\cloudflared\;C:\Program Files\Go\bin;C:\Program Files\Tailscale\;C:\Users\andreypankov\.local\bin;C:\Program Files\Eclipse Adoptium\jdk-8.0.422.5-hotspot\bin;C:\Program Files\BellSoft\LibericaJDK-17-Full\bin\;C:\Program Files\BellSoft\LibericaJDK-21-Full\bin\;C:\Program Files\Eclipse Adoptium\jdk-21.0.2.13-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-17.0.10.7-hotspot\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python311\Scripts\;C:\Python311\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\WireGuard\;C:\Program Files\Git\cmd;C:\Program Files (x86)\ZeroTier\One\;C:\ProgramData\chocolatey\bin;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.3.0\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\AmneziaWG\;C:\Program Files\nodejs\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\cursor\resources\app\bin;C:\Program Files (x86)\cloudflared\;C:\Users\andreypankov\AppData\Local\pnpm;C:\Users\andreypankov\AppData\Local\Microsoft\WindowsApps;C:\Users\andreypankov\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\andreypankov\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\andreypankov\AppData\Local\Programs\Lens\resources\cli\bin;C:\Users\andreypankov\.dotnet\tools;C:\Users\andreypankov\AppData\Local\Programs\Hyper\resources\bin;C:\Users\andreypankov\AppData\Local\Programs\mongosh\;C:\Program Files (x86)\Atmel\Flip 3.4.7\bin;C:\Users\andreypankov\andreypankov\Local\Programs\Hyper\resources\bin;C:\Users\andreypankov\AppData\Roaming\npm;C:\Users\andreypankov\AppData\Local\Microsoft\WinGet\Links;C:\Users\andreypankov\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.1.1-full_build\bin;C:\Users\andreypankov\AppData\Local\Microsoft\WinGet\Packages\yt-dlp.yt-dlp_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Program Files (x86)\Nmap;C:\Users\andreypankov\AppData\Local\Programs\Ollama;C:\Users\andreypankov\AppData\Local\Programs\Antigravity\bin;C:\Users\andreypankov\AppData\Local\Android\Sdk\platform-tools;C:\Users\andreypankov\go\bin;C:\Users\andreypankov\.lmstudio\bin;C:\Users\andreypankov\AppData\Local\Microsoft\WinGet\Packages\Anthropic.ClaudeCode_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\andreypankov\AppData\Local\Programs\cursor\resources\app\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="BellSoft"/>
+    <property name="java.vm.version" value="17.0.10+13-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testEvaluatePositionOWinXPlayer" classname="com.mycompany.app.AppTest" time="0.091"/>
+  <testcase name="testCheckStateDraw" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testCheckStatePlayingPartial" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateOWinCol0" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateOWinCol1" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateOWinCol2" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateOWinRow0" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testCheckStateOWinRow1" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testCheckStateOWinRow2" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testTicTacToePanelConstructor" classname="com.mycompany.app.AppTest" time="0.362"/>
+  <testcase name="testEvaluatePositionOWinOPlayer" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testMiniMaxReturnsValidMove" classname="com.mycompany.app.AppTest" time="0.006">
+    <system-out><![CDATA[
+minimax:   7(0) 
+minimax:   8(100) 
+minimax:   9(-100) 
+minimax best:   8(100) Steps counted: 5]]></system-out>
+  </testcase>
+  <testcase name="testGameInit" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStatePlaying" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testMiniMaxTwoMovesLeft" classname="com.mycompany.app.AppTest" time="0.002">
+    <system-out><![CDATA[
+minimax:   8(100) 
+minimax:   9(0) 
+minimax best:   8(100) Steps counted: 1]]></system-out>
+  </testcase>
+  <testcase name="testEvaluatePositionXWinXPlayer" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testUtilityPrintChar" classname="com.mycompany.app.AppTest" time="0.008">
+    <system-out><![CDATA[
+X-O-X-O-X-O-O-X-O-
+]]></system-out>
+  </testcase>
+  <testcase name="testUtilityPrintList" classname="com.mycompany.app.AppTest" time="0.003">
+    <system-out><![CDATA[
+1-3-5-
+]]></system-out>
+  </testcase>
+  <testcase name="testEvaluatePositionXWinOPlayer" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testTicTacToeCellSetMarkerO" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testTicTacToeCellSetMarkerX" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testEvaluatePositionPlaying" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testEvaluatePositionDraw" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testTicTacToeCellConstructor" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testUtilityPrintInt" classname="com.mycompany.app.AppTest" time="0.002">
+    <system-out><![CDATA[
+1-2-3-4-5-6-7-8-9-
+]]></system-out>
+  </testcase>
+  <testcase name="testGenerateMovesPartial" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testPlayerFields" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testStateValues" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateOWinDiag1" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testCheckStateOWinDiag2" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testTicTacToeCellGetters" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testGenerateMovesFull" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateXWinCol0" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateXWinCol1" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateXWinCol2" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateXWinRow0" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testCheckStateXWinRow1" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testCheckStateXWinRow2" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testGenerateMovesEmpty" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testCheckStateXWinDiag1" classname="com.mycompany.app.AppTest" time="0.0"/>
+  <testcase name="testCheckStateXWinDiag2" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testMiniMaxNearlyFullBoard" classname="com.mycompany.app.AppTest" time="0.001">
+    <system-out><![CDATA[
+minimax:   9(0) 
+minimax best:   9(0) Steps counted: 0]]></system-out>
+  </testcase>
+  <testcase name="testMiniMaxBlocksWin" classname="com.mycompany.app.AppTest" time="0.002">
+    <system-out><![CDATA[
+minimax:   3(100) 
+minimax:   6(100) 
+minimax:   7(-100) 
+minimax:   8(-100) 
+minimax:   9(-100) 
+minimax best:   3(100) Steps counted: 77]]></system-out>
+  </testcase>
+</testsuite>
