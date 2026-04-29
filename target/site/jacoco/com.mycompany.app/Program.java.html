@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Program.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">my-app</a> &gt; <a href="index.source.html" class="el_package">com.mycompany.app</a> &gt; <span class="el_source">Program.java</span></div><h1>Program.java</h1><pre class="source lang-java linenums">package com.mycompany.app;
+
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+<span class="fc" id="L15">enum State {</span>
+<span class="fc" id="L16">    PLAYING,</span>
+<span class="fc" id="L17">    OWIN,</span>
+<span class="fc" id="L18">    XWIN,</span>
+<span class="fc" id="L19">    DRAW</span>
+}
+
+<span class="fc" id="L22">class Player {</span>
+    public char symbol;
+    public int move;
+    public boolean selected;
+    public boolean win;
+}
+
+class Game {
+    public static final int INF = 100;
+    private static final int BOARD_SIZE = 9;
+<span class="fc" id="L32">    private static final int[][] WINNING_LINES = {</span>
+        {0, 1, 2},
+        {3, 4, 5},
+        {6, 7, 8},
+        {0, 3, 6},
+        {1, 4, 7},
+        {2, 5, 8},
+        {0, 4, 8},
+        {2, 4, 6}
+    };
+
+    public State state;
+    public Player player1;
+    public Player player2;
+    public Player cplayer;
+    public int nmove;
+    public char symbol;
+    public int q;
+    public char[] board;
+
+<span class="fc" id="L52">    public Game() {</span>
+<span class="fc" id="L53">        player1 = new Player();</span>
+<span class="fc" id="L54">        player2 = new Player();</span>
+<span class="fc" id="L55">        player1.symbol = 'X';</span>
+<span class="fc" id="L56">        player2.symbol = 'O';</span>
+<span class="fc" id="L57">        cplayer = player1;</span>
+<span class="fc" id="L58">        state = State.PLAYING;</span>
+<span class="fc" id="L59">        board = new char[BOARD_SIZE];</span>
+<span class="fc" id="L60">        resetBoard(board);</span>
+<span class="fc" id="L61">    }</span>
+
+    public State checkState(char[] board) {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (hasLine(board, 'X')) {</span>
+<span class="fc" id="L65">            return State.XWIN;</span>
+        }
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (hasLine(board, 'O')) {</span>
+<span class="fc" id="L68">            return State.OWIN;</span>
+        }
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        for (char cell : board) {</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">            if (cell == ' ') {</span>
+<span class="fc" id="L72">                return State.PLAYING;</span>
+            }
+        }
+<span class="fc" id="L75">        return State.DRAW;</span>
+    }
+
+    void generateMoves(char[] board, ArrayList&lt;Integer&gt; moveList) {
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        for (int i = 0; i &lt; BOARD_SIZE; i++) {</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">            if (board[i] == ' ') {</span>
+<span class="fc" id="L81">                moveList.add(i);</span>
+            }
+        }
+<span class="fc" id="L84">    }</span>
+
+    int evaluatePosition(char[] board, Player player) {
+<span class="fc" id="L87">        State currentState = checkState(board);</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (currentState == State.PLAYING) {</span>
+<span class="fc" id="L89">            return -1;</span>
+        }
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (currentState == State.DRAW) {</span>
+<span class="fc" id="L92">            return 0;</span>
+        }
+<span class="pc bpc" id="L94" title="4 of 8 branches missed.">        boolean winnerIsPlayer = (currentState == State.XWIN &amp;&amp; player.symbol == 'X')</span>
+                || (currentState == State.OWIN &amp;&amp; player.symbol == 'O');
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        return winnerIsPlayer ? INF : -INF;</span>
+    }
+
+    int MiniMax(char[] board, Player player) {
+<span class="fc" id="L100">        ArrayList&lt;Integer&gt; moveList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L101">        generateMoves(board, moveList);</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">        if (moveList.isEmpty()) {</span>
+<span class="nc" id="L103">            return 0;</span>
+        }
+
+<span class="fc" id="L106">        int bestValue = -INF;</span>
+<span class="fc" id="L107">        int bestMove = moveList.get(0);</span>
+
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        for (int move : moveList) {</span>
+<span class="fc" id="L110">            board[move] = player.symbol;</span>
+<span class="fc" id="L111">            int value = MinMove(board, player);</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">            if (value &gt; bestValue) {</span>
+<span class="fc" id="L113">                bestValue = value;</span>
+<span class="fc" id="L114">                bestMove = move;</span>
+            }
+<span class="fc" id="L116">            board[move] = ' ';</span>
+<span class="fc" id="L117">        }</span>
+
+<span class="fc" id="L119">        return bestMove + 1;</span>
+    }
+
+    int MinMove(char[] board, Player player) {
+<span class="fc" id="L123">        return minimax(board, player.symbol, false, 0, -INF, INF);</span>
+    }
+
+    int MaxMove(char[] board, Player player) {
+<span class="fc" id="L127">        return minimax(board, player.symbol, true, 0, -INF, INF);</span>
+    }
+
+    private int minimax(char[] board, char rootSymbol, boolean maximizing, int depth, int alpha, int beta) {
+<span class="fc" id="L131">        q++;</span>
+<span class="fc" id="L132">        State currentState = checkState(board);</span>
+<span class="fc bfc" id="L133" title="All 2 branches covered.">        if (currentState != State.PLAYING) {</span>
+<span class="fc" id="L134">            return scoreState(currentState, rootSymbol, depth);</span>
+        }
+
+<span class="fc" id="L137">        ArrayList&lt;Integer&gt; moveList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L138">        generateMoves(board, moveList);</span>
+<span class="fc bfc" id="L139" title="All 2 branches covered.">        char currentSymbol = maximizing ? rootSymbol : opponent(rootSymbol);</span>
+
+<span class="fc bfc" id="L141" title="All 2 branches covered.">        if (maximizing) {</span>
+<span class="fc" id="L142">            int bestValue = -INF;</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">            for (int move : moveList) {</span>
+<span class="fc" id="L144">                board[move] = currentSymbol;</span>
+<span class="fc" id="L145">                int value = minimax(board, rootSymbol, false, depth + 1, alpha, beta);</span>
+<span class="fc" id="L146">                board[move] = ' ';</span>
+<span class="fc" id="L147">                bestValue = Math.max(bestValue, value);</span>
+<span class="fc" id="L148">                alpha = Math.max(alpha, bestValue);</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">                if (beta &lt;= alpha) {</span>
+<span class="fc" id="L150">                    break;</span>
+                }
+<span class="fc" id="L152">            }</span>
+<span class="fc" id="L153">            return bestValue;</span>
+        }
+
+<span class="fc" id="L156">        int bestValue = INF;</span>
+<span class="fc bfc" id="L157" title="All 2 branches covered.">        for (int move : moveList) {</span>
+<span class="fc" id="L158">            board[move] = currentSymbol;</span>
+<span class="fc" id="L159">            int value = minimax(board, rootSymbol, true, depth + 1, alpha, beta);</span>
+<span class="fc" id="L160">            board[move] = ' ';</span>
+<span class="fc" id="L161">            bestValue = Math.min(bestValue, value);</span>
+<span class="fc" id="L162">            beta = Math.min(beta, bestValue);</span>
+<span class="fc bfc" id="L163" title="All 2 branches covered.">            if (beta &lt;= alpha) {</span>
+<span class="fc" id="L164">                break;</span>
+            }
+<span class="fc" id="L166">        }</span>
+<span class="fc" id="L167">        return bestValue;</span>
+    }
+
+    private int scoreState(State currentState, char rootSymbol, int depth) {
+<span class="fc bfc" id="L171" title="All 2 branches covered.">        if (currentState == State.DRAW) {</span>
+<span class="fc" id="L172">            return 0;</span>
+        }
+<span class="fc bfc" id="L174" title="All 8 branches covered.">        boolean rootWins = (currentState == State.XWIN &amp;&amp; rootSymbol == 'X')</span>
+                || (currentState == State.OWIN &amp;&amp; rootSymbol == 'O');
+<span class="fc bfc" id="L176" title="All 2 branches covered.">        return rootWins ? INF - depth : depth - INF;</span>
+    }
+
+    private char opponent(char symbol) {
+<span class="fc bfc" id="L180" title="All 2 branches covered.">        return symbol == 'X' ? 'O' : 'X';</span>
+    }
+
+    private boolean hasLine(char[] board, char target) {
+<span class="fc bfc" id="L184" title="All 2 branches covered.">        for (int[] line : WINNING_LINES) {</span>
+<span class="fc bfc" id="L185" title="All 6 branches covered.">            if (board[line[0]] == target &amp;&amp; board[line[1]] == target &amp;&amp; board[line[2]] == target) {</span>
+<span class="fc" id="L186">                return true;</span>
+            }
+        }
+<span class="fc" id="L189">        return false;</span>
+    }
+
+    private void resetBoard(char[] board) {
+<span class="fc bfc" id="L193" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="fc" id="L194">            board[i] = ' ';</span>
+        }
+<span class="fc" id="L196">    }</span>
+}
+
+<span class="nc" id="L199">public class Program {</span>
+    public static void main(String[] args) throws IOException {
+<span class="nc" id="L201">        JFrame frame = new JFrame(&quot;Demo&quot;);</span>
+<span class="nc" id="L202">        frame.add(new TicTacToePanel(new GridLayout(3, 3)));</span>
+<span class="nc" id="L203">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L204">        frame.setBounds(5, 5, 500, 500);</span>
+<span class="nc" id="L205">        frame.setVisible(true);</span>
+<span class="nc" id="L206">    }</span>
+}
+
+class TicTacToeCell extends JButton {
+    private final int num;
+    private final int row;
+    private final int col;
+    private char marker;
+
+<span class="fc" id="L215">    public TicTacToeCell(int num, int x, int y) {</span>
+<span class="fc" id="L216">        this.num = num;</span>
+<span class="fc" id="L217">        row = y;</span>
+<span class="fc" id="L218">        col = x;</span>
+<span class="fc" id="L219">        marker = ' ';</span>
+<span class="fc" id="L220">        setText(Character.toString(marker));</span>
+<span class="fc" id="L221">        setFont(new Font(&quot;Arial&quot;, Font.PLAIN, 40));</span>
+<span class="fc" id="L222">    }</span>
+
+    public void setMarker(String markerText) {
+<span class="fc" id="L225">        marker = markerText.charAt(0);</span>
+<span class="fc" id="L226">        setText(markerText);</span>
+<span class="fc" id="L227">        setEnabled(false);</span>
+<span class="fc" id="L228">    }</span>
+
+    public char getMarker() {
+<span class="fc" id="L231">        return marker;</span>
+    }
+
+    public int getRow() {
+<span class="nc" id="L235">        return row;</span>
+    }
+
+    public int getCol() {
+<span class="nc" id="L239">        return col;</span>
+    }
+
+    public int getNum() {
+<span class="nc" id="L243">        return num;</span>
+    }
+}
+
+<span class="nc" id="L247">class Utility {</span>
+    public static void print(char[] board) {
+<span class="nc" id="L249">        System.out.println();</span>
+<span class="nc bnc" id="L250" title="All 2 branches missed.">        for (int i = 0; i &lt; 9; i++) {</span>
+<span class="nc" id="L251">            System.out.print(board[i] + &quot;-&quot;);</span>
+        }
+<span class="nc" id="L253">        System.out.println();</span>
+<span class="nc" id="L254">    }</span>
+
+    public static void print(int[] board) {
+<span class="nc" id="L257">        System.out.println();</span>
+<span class="nc bnc" id="L258" title="All 2 branches missed.">        for (int i = 0; i &lt; 9; i++) {</span>
+<span class="nc" id="L259">            System.out.print(board[i] + &quot;-&quot;);</span>
+        }
+<span class="nc" id="L261">        System.out.println();</span>
+<span class="nc" id="L262">    }</span>
+
+    public static void print(List&lt;Integer&gt; moves) {
+<span class="nc" id="L265">        System.out.println();</span>
+<span class="nc bnc" id="L266" title="All 2 branches missed.">        for (int i = 0; i &lt; moves.size(); i++) {</span>
+<span class="nc" id="L267">            System.out.print(moves.get(i) + &quot;-&quot;);</span>
+        }
+<span class="nc" id="L269">        System.out.println();</span>
+<span class="nc" id="L270">    }</span>
+}
+
+class TicTacToePanel extends JPanel implements ActionListener {
+    private final Game game;
+<span class="fc" id="L275">    private final TicTacToeCell[] cells = new TicTacToeCell[9];</span>
+
+    TicTacToePanel(GridLayout layout) {
+<span class="fc" id="L278">        super(layout);</span>
+<span class="fc" id="L279">        createCell(0, 0, 0);</span>
+<span class="fc" id="L280">        createCell(1, 1, 0);</span>
+<span class="fc" id="L281">        createCell(2, 2, 0);</span>
+<span class="fc" id="L282">        createCell(3, 0, 1);</span>
+<span class="fc" id="L283">        createCell(4, 1, 1);</span>
+<span class="fc" id="L284">        createCell(5, 2, 1);</span>
+<span class="fc" id="L285">        createCell(6, 0, 2);</span>
+<span class="fc" id="L286">        createCell(7, 1, 2);</span>
+<span class="fc" id="L287">        createCell(8, 2, 2);</span>
+<span class="fc" id="L288">        game = new Game();</span>
+<span class="fc" id="L289">        game.cplayer = game.player1;</span>
+<span class="fc" id="L290">    }</span>
+
+    private void createCell(int num, int x, int y) {
+<span class="fc" id="L293">        cells[num] = new TicTacToeCell(num, x, y);</span>
+<span class="fc" id="L294">        cells[num].addActionListener(this);</span>
+<span class="fc" id="L295">        add(cells[num]);</span>
+<span class="fc" id="L296">    }</span>
+
+    Game game() {
+<span class="fc" id="L299">        return game;</span>
+    }
+
+    State gameState() {
+<span class="fc" id="L303">        return game.state;</span>
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+<span class="fc" id="L308">        game.player1.move = -1;</span>
+<span class="fc" id="L309">        game.player2.move = -1;</span>
+
+<span class="fc" id="L311">        int index = 0;</span>
+<span class="fc bfc" id="L312" title="All 2 branches covered.">        for (TicTacToeCell cell : cells) {</span>
+<span class="fc bfc" id="L313" title="All 2 branches covered.">            if (actionEvent.getSource() == cell) {</span>
+<span class="fc" id="L314">                cell.setMarker(Character.toString(game.cplayer.symbol));</span>
+            }
+<span class="fc" id="L316">            game.board[index++] = cell.getMarker();</span>
+        }
+
+<span class="fc bfc" id="L319" title="All 2 branches covered.">        if (game.cplayer == game.player1) {</span>
+<span class="fc" id="L320">            game.player2.move = game.MiniMax(game.board, game.player2);</span>
+<span class="fc" id="L321">            game.nmove = game.player2.move;</span>
+<span class="fc" id="L322">            game.symbol = game.player2.symbol;</span>
+<span class="fc" id="L323">            game.cplayer = game.player2;</span>
+<span class="pc bpc" id="L324" title="1 of 2 branches missed.">            if (game.player2.move &gt; 0) {</span>
+<span class="fc" id="L325">                cells[game.player2.move - 1].doClick();</span>
+            }
+        } else {
+<span class="fc" id="L328">            game.nmove = game.player1.move;</span>
+<span class="fc" id="L329">            game.symbol = game.player1.symbol;</span>
+<span class="fc" id="L330">            game.cplayer = game.player1;</span>
+        }
+
+<span class="fc" id="L333">        game.state = game.checkState(game.board);</span>
+<span class="pc bpc" id="L334" title="1 of 2 branches missed.">        if (game.state != State.PLAYING) {</span>
+<span class="nc" id="L335">            finishGame(game.state);</span>
+        }
+<span class="fc" id="L337">    }</span>
+
+    protected void finishGame(State result) {
+<span class="nc bnc" id="L340" title="All 2 branches missed.">        if (result == State.XWIN) {</span>
+<span class="nc" id="L341">            JOptionPane.showMessageDialog(null, &quot;Выиграли крестики&quot;, &quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc bnc" id="L342" title="All 2 branches missed.">        } else if (result == State.OWIN) {</span>
+<span class="nc" id="L343">            JOptionPane.showMessageDialog(null, &quot;Выиграли нолики&quot;, &quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc bnc" id="L344" title="All 2 branches missed.">        } else if (result == State.DRAW) {</span>
+<span class="nc" id="L345">            JOptionPane.showMessageDialog(null, &quot;Ничья&quot;, &quot;Результат&quot;, JOptionPane.WARNING_MESSAGE);</span>
+        }
+<span class="nc" id="L347">        System.exit(0);</span>
+<span class="nc" id="L348">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
