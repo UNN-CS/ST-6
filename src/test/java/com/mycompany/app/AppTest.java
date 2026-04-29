@@ -11,6 +11,7 @@ import java.io.PrintStream;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 class AppTest {
@@ -66,7 +67,7 @@ class AppTest {
 
     game.generateMoves(new char[] {'X', ' ', 'O', ' ', ' ', 'X', 'O', ' ', 'X'}, moves);
 
-    assertEquals(new ArrayList<>(java.util.List.of(1, 3, 4, 7)), moves);
+    assertEquals(new ArrayList<>(Arrays.asList(1, 3, 4, 7)), moves);
   }
 
   @Test
@@ -124,20 +125,20 @@ class AppTest {
   }
 
   @Test
-  void utilityPrintMethodsWriteToStdout() {
+  void utilityPrintMethodsWriteToStdout() throws Exception {
     PrintStream original = System.out;
     ByteArrayOutputStream output = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(output, true, StandardCharsets.UTF_8));
+    System.setOut(new PrintStream(output, true, StandardCharsets.UTF_8.name()));
 
     try {
       Utility.print(new char[] {'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'});
       Utility.print(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9});
-      Utility.print(new ArrayList<>(java.util.List.of(0, 4, 8)));
+      Utility.print(new ArrayList<>(Arrays.asList(0, 4, 8)));
     } finally {
       System.setOut(original);
     }
 
-    String printed = output.toString(StandardCharsets.UTF_8);
+    String printed = output.toString(StandardCharsets.UTF_8.name());
     assertTrue(printed.contains("X-O-X-O-X-O-X-O-X-"));
     assertTrue(printed.contains("1-2-3-4-5-6-7-8-9-"));
     assertTrue(printed.contains("0-4-8-"));
