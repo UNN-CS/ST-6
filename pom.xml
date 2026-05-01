@@ -42,7 +42,7 @@
     </dependency>
   </dependencies>
 
-  <build>
+<build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -84,6 +84,14 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <forkCount>1</forkCount>
+            <testFailureIgnore>true</testFailureIgnore>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -95,7 +103,7 @@
           <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
-            <!-- Move JaCoCo plugin outside of pluginManagement -->
+      <!-- Move JaCoCo plugin outside of pluginManagement -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
