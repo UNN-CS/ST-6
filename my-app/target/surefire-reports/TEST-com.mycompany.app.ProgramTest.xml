@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.83" tests="35" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="/home/alexey/testing-course/ST-6/my-app/target/test-classes:/home/alexey/testing-course/ST-6/my-app/target/classes:/home/alexey/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/alexey/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/alexey/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/alexey/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/alexey/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/alexey/testing-course/ST-6/my-app/target/surefire/surefirebooter-20260501181834371_3.jar /home/alexey/testing-course/ST-6/my-app/target/surefire 2026-05-01T18-18-34_085-jvmRun1 surefire-20260501181834371_1tmp surefire_0-20260501181834371_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/alexey/testing-course/ST-6/my-app/target/test-classes:/home/alexey/testing-course/ST-6/my-app/target/classes:/home/alexey/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/home/alexey/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/alexey/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/home/alexey/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/alexey/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/alexey"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/alexey/testing-course/ST-6/my-app"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/alexey/testing-course/ST-6/my-app/target/surefire/surefirebooter-20260501181834371_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.18+8-Ubuntu-125.10.1"/>
+    <property name="user.name" value="alexey"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.17.0-22-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/alexey/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.18"/>
+    <property name="user.dir" value="/home/alexey/testing-course/ST-6/my-app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="17.0.18+8-Ubuntu-125.10.1"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testCellSetMarkerO" classname="com.mycompany.app.ProgramTest" time="0.245"/>
+  <testcase name="testCellConstructorAndGetters" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testSymbolAndStateFields" classname="com.mycompany.app.ProgramTest" time="0.008"/>
+  <testcase name="testGamePlayer1AndPlayer2Different" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="testStateEnum" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testEvaluatePosition" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testOWins" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testGenerateMoves" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testBoardLengthConstant" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testMinimaxOnPartiallyFilledBoard" classname="com.mycompany.app.ProgramTest" time="0.026">
+    <system-out><![CDATA[
+minimax:   2(0) 
+minimax:   3(-100) 
+minimax:   4(0) 
+minimax:   6(0) 
+minimax:   7(-100) 
+minimax:   8(0) 
+minimax best:   6(0) Steps counted: 532]]></system-out>
+  </testcase>
+  <testcase name="testDrawAndPlaying" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testMinimaxCounterQ" classname="com.mycompany.app.ProgramTest" time="0.005">
+    <system-out><![CDATA[
+minimax:   3(0) 
+minimax:   4(100) 
+minimax:   6(0) 
+minimax:   7(100) 
+minimax:   8(0) 
+minimax best:   4(100) Steps counted: 135]]></system-out>
+  </testcase>
+  <testcase name="testCellMarkerRoundtrip" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testEmptyBoardIsPlaying" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testINFConstantValue" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testUtilityPrintDoesNotThrow" classname="com.mycompany.app.ProgramTest" time="0.007">
+    <system-out><![CDATA[
+X-O- - -X- - - -O-
+
+1-2-3-4-5-6-7-8-9-
+
+0-4-8-
+]]></system-out>
+  </testcase>
+  <testcase name="testCheckStateAfterBoardChange" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testGenerateMovesWithSymbols" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testPlayerFields" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCellSetMarker" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testPlayerReferencesInGame" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testPlayerDefaultValues" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testMinimaxMultipleCalls" classname="com.mycompany.app.ProgramTest" time="0.321">
+    <system-out><![CDATA[
+minimax:   1(0) 
+minimax:   2(0) 
+minimax:   3(0) 
+minimax:   4(0) 
+minimax:   5(0) 
+minimax:   6(0) 
+minimax:   7(0) 
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   8(0) Steps counted: 294777
+minimax:   1(0) 
+minimax:   2(0) 
+minimax:   3(0) 
+minimax:   4(0) 
+minimax:   5(0) 
+minimax:   6(0) 
+minimax:   7(0) 
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   6(0) Steps counted: 294777
+minimax:   1(0) 
+minimax:   2(0) 
+minimax:   3(0) 
+minimax:   4(0) 
+minimax:   5(0) 
+minimax:   6(0) 
+minimax:   7(0) 
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   7(0) Steps counted: 294777]]></system-out>
+  </testcase>
+  <testcase name="testEvaluatePositionNonTerminal" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testIntegrationGenerateAndEvaluate" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCellInitiallyEnabled" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testGameConstructor" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testIntegrationBoardModification" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testXWinsAllPatterns" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCellDifferentPositions" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTwoInRowNotWin" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testGameCPlayerField" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testPlayerSymbolChange" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testMinimaxReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.09">
+    <system-out><![CDATA[
+minimax:   1(0) 
+minimax:   2(0) 
+minimax:   3(0) 
+minimax:   4(0) 
+minimax:   5(0) 
+minimax:   6(0) 
+minimax:   7(0) 
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   7(0) Steps counted: 294777]]></system-out>
+  </testcase>
+  <testcase name="testBoardDirectModification" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+</testsuite>
