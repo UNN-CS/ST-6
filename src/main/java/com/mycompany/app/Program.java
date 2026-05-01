@@ -1,3 +1,5 @@
+package com.mycompany.app;
+
 // Реализация игры "Крестики-нолики" (3x3)
 // Минимаксный алгоритм
 
@@ -332,5 +334,3 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
    }
 }
-
-
