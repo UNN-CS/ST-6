@@ -27,7 +27,6 @@ public class GameTest {
 
     @Test
     public void testGenerateMoves() {
-        // Заполним часть доски
         game.board = new char[]{'X', 'O', 'X', ' ', ' ', 'O', 'X', ' ', 'O'};
         ArrayList<Integer> moves = new ArrayList<>();
         game.generateMoves(game.board, moves);
@@ -40,12 +39,12 @@ public class GameTest {
 
     @Test
     public void testCheckStateWinCondition() {
-        // Имитируем победу X (верхняя горизонталь)
+        // Имитируем победу X
         game.board = new char[]{'X', 'X', 'X', ' ', 'O', 'O', ' ', ' ', ' '};
         game.symbol = 'X'; // Важно! checkState опирается на поле класса symbol
         assertEquals(State.XWIN, game.checkState(game.board));
 
-        // Имитируем победу O (диагональ)
+        // Имитируем победу O
         game.board = new char[]{'O', 'X', ' ', 'X', 'O', ' ', ' ', ' ', 'O'};
         game.symbol = 'O'; 
         assertEquals(State.OWIN, game.checkState(game.board));
@@ -53,7 +52,7 @@ public class GameTest {
 
     @Test
     public void testCheckStateDrawCondition() {
-        // Ничья: доска заполнена, победителя нет
+        // Ничья
         game.board = new char[]{'X', 'O', 'X', 'X', 'O', 'O', 'O', 'X', 'X'};
         game.symbol = 'O'; 
         assertEquals(State.DRAW, game.checkState(game.board));
@@ -89,13 +88,13 @@ public class GameTest {
 
     @Test
     public void testMiniMaxWins() {
-        // Создаем ситуацию, где алгоритм 'O' (player2) может победить в один ход
+        // Создаем ситуацию, где алгоритм 'O' может победить в один ход
         game.board = new char[]{
             'O', 'O', ' ',
             'X', 'X', ' ',
             ' ', ' ', ' '
         };
-        // Ход O. Он должен выбрать ячейку 2 (по индексу массива это 2, но MiniMax возвращает index+1, то есть 3)
+        
         int bestMove = game.MiniMax(game.board, game.player2);
         assertEquals(3, bestMove, "MiniMax должен найти победный ход (индекс+1)");
     }

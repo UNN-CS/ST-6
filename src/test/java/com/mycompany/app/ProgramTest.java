@@ -11,7 +11,6 @@ public class ProgramTest {
 
     @Test
     public void testMainMethodCreatesCorrectFrame() throws Exception {
-        // Защита от падения в Headless-средах (например, при сборке в GitHub Actions)
         if (GraphicsEnvironment.isHeadless()) {
             System.out.println("Обнаружена среда без графического интерфейса (Headless). Тест окна пропущен.");
             return;
@@ -36,7 +35,7 @@ public class ProgramTest {
                 isDemoFrameFound = true;
                 JFrame jFrame = (JFrame) frame;
 
-                // Проверяем параметры, которые были заданы в исходном коде
+                // Проверяем параметры
                 assertEquals(500, jFrame.getWidth(), "Ширина окна должна быть равна 500");
                 assertEquals(500, jFrame.getHeight(), "Высота окна должна быть равна 500");
                 assertEquals(JFrame.EXIT_ON_CLOSE, jFrame.getDefaultCloseOperation(), "Должно закрываться по крестику");
@@ -53,10 +52,8 @@ public class ProgramTest {
 
     @Test
     public void testProgramInstantiation() {
-        // Покрываем дефолтный конструктор, чтобы JaCoCo засчитал 100% покрытия класса
         Program program = new Program();
-        
-        // Используем assertInstanceOf вместо assertNotNull для большей строгости
+
         assertInstanceOf(Program.class, program, "Должен успешно создаваться экземпляр Program");
     }
 }
