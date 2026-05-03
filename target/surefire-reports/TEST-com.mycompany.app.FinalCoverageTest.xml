@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.FinalCoverageTest" time="0.841" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="C:\Users\ajlak\OneDrive\Desktop\testing\ST-6\target\test-classes;C:\Users\ajlak\OneDrive\Desktop\testing\ST-6\target\classes;C:\Users\ajlak\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ajlak\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Users\ajlak\scoop\apps\openjdk21\current\bin"/>
+    <property name="sun.java.command" value="C:\Users\ajlak\AppData\Local\Temp\surefire14656046893687014099\surefirebooter-20260504002007933_3.jar C:\Users\ajlak\AppData\Local\Temp\surefire14656046893687014099 2026-05-04T00-20-07_587-jvmRun1 surefire-20260504002007933_1tmp surefire_0-20260504002007933_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\ajlak\OneDrive\Desktop\testing\ST-6\target\test-classes;C:\Users\ajlak\OneDrive\Desktop\testing\ST-6\target\classes;C:\Users\ajlak\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ajlak\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\ajlak"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Users\ajlak\scoop\apps\openjdk21\current"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\ajlak\OneDrive\Desktop\testing\ST-6"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\ajlak\AppData\Local\Temp\surefire14656046893687014099\surefirebooter-20260504002007933_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-58"/>
+    <property name="user.name" value="ajlak"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\ajlak\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ajlak\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="C:\Users\ajlak\OneDrive\Desktop\testing\ST-6"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="C:\Users\ajlak\scoop\apps\openjdk21\current\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\ajlak\AppData\Local\Programs\Microsoft VS Code;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\CMake\bin;C:\Program Files\Git\cmd;C:\Users\ajlak\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ajlak\scoop\apps\maven\current\bin;C:\Users\ajlak\scoop\apps\openjdk21\current\bin;C:\Users\ajlak\scoop\shims;C:\msys64\ucrt64\bin;C:\Users\ajlak\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ajlak\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\ajlak\OneDrive\Документы\maven\apache-maven-3.9.15\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.2+13-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testTicTacToeCell" classname="com.mycompany.app.FinalCoverageTest" time="0.287"/>
+  <testcase name="testUtilityMethods" classname="com.mycompany.app.FinalCoverageTest" time="0.02">
+    <system-out><![CDATA[
+X-O-X-O-X-O-X-O-X-
+
+1-2-3-4-5-6-7-8-9-
+
+1-2-3-
+]]></system-out>
+  </testcase>
+  <testcase name="testCoverAllGameMethods" classname="com.mycompany.app.FinalCoverageTest" time="0.334"/>
+</testsuite>
