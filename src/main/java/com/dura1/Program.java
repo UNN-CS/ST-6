@@ -1,5 +1,5 @@
-// Реализация игры "Крестики-нолики" (3x3)
-// Минимаксный алгоритм
+package com.dura1;// Р РµР°Р»РёР·Р°С†РёСЏ РёРіСЂС‹ "РљСЂРµСЃС‚РёРєРё-РЅРѕР»РёРєРё" (3x3)
+// РњРёРЅРёРјР°РєСЃРЅС‹Р№ Р°Р»РіРѕСЂРёС‚Рј
 
 import java.awt.*;
 import java.awt.event.*;
@@ -23,8 +23,8 @@ class Player {
 class Game {
     public State state;
     public Player player1, player2;
-    public Player cplayer; // текущий игрок
-    public int nmove;  // последний шаг сделанный действующим игроком 
+    public Player cplayer; // С‚РµРєСѓС‰РёР№ РёРіСЂРѕРє
+    public int nmove;  // РїРѕСЃР»РµРґРЅРёР№ С€Р°Рі СЃРґРµР»Р°РЅРЅС‹Р№ РґРµР№СЃС‚РІСѓСЋС‰РёРј РёРіСЂРѕРєРѕРј 
     public char symbol;
     public static final int INF = 100;
     public int q;
@@ -37,12 +37,12 @@ class Game {
       player1.symbol='X';
       player2.symbol='O';
       state=State.PLAYING; 
-      board=new char[9];   // текущая доска в игре  
+      board=new char[9];   // С‚РµРєСѓС‰Р°СЏ РґРѕСЃРєР° РІ РёРіСЂРµ  
       for(int i=0;i<9;i++)
         board[i]=' ';
     }
 
-    // возвращаем состояние игры
+    // РІРѕР·РІСЂР°С‰Р°РµРј СЃРѕСЃС‚РѕСЏРЅРёРµ РёРіСЂС‹
     public State checkState(char[] board) 
     {
       //char symbol=game.symbol;//cplayer.symbol;
@@ -73,14 +73,14 @@ class Game {
     }
     return state;
   }
-     // сгенерировать возможные ходы
+     // СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ РІРѕР·РјРѕР¶РЅС‹Рµ С…РѕРґС‹
    void generateMoves(char[] board, ArrayList<Integer> move_list) {
     for (int i = 0; i < 9; i++) 
         if (board[i] == ' ') 
             move_list.add(i);
    }
 
-   // оценка позиции
+   // РѕС†РµРЅРєР° РїРѕР·РёС†РёРё
    int evaluatePosition(char[] board, Player player)  
    {
     State state=checkState(board);
@@ -96,7 +96,7 @@ class Game {
     return -1;
    }
 
-   int MiniMax(char[] board, Player player) // выбор наилучшего хода
+   int MiniMax(char[] board, Player player) // РІС‹Р±РѕСЂ РЅР°РёР»СѓС‡С€РµРіРѕ С…РѕРґР°
    {
     int best_val = -Game.INF, index = 0;
     ArrayList<Integer> move_list=new ArrayList<>();
@@ -314,16 +314,16 @@ class TicTacToePanel extends JPanel implements ActionListener {
 
 
       if(game.state==State.XWIN) {
-        JOptionPane.showMessageDialog(null,"Выиграли крестики","Результат", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Р’С‹РёРіСЂР°Р»Рё РєСЂРµСЃС‚РёРєРё","Р РµР·СѓР»СЊС‚Р°С‚", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
 
       }
       else if(game.state==State.OWIN) {
-        JOptionPane.showMessageDialog(null,"Выиграли нолики","Результат", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Р’С‹РёРіСЂР°Р»Рё РЅРѕР»РёРєРё","Р РµР·СѓР»СЊС‚Р°С‚", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
       }
       else if(game.state==State.DRAW) {
-        JOptionPane.showMessageDialog(null,"Ничья","Результат", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"РќРёС‡СЊСЏ","Р РµР·СѓР»СЊС‚Р°С‚", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
       } 
 
