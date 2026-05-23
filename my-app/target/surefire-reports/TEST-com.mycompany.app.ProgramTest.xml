@@ -1,68 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="1.918" tests="43" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="1.875" tests="43" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.specification.version" value="26"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
-    <property name="java.class.path" value="C:\Users\rabat\ST-6\my-app\target\test-classes;C:\Users\rabat\ST-6\my-app\target\classes;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rabat\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rabat\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rabat\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/fedashov/nnsu/QA/ST-6/my-app/target/test-classes:/home/fedashov/nnsu/QA/ST-6/my-app/target/classes:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/fedashov/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/fedashov/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/fedashov/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/fedashov/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="user.timezone" value="Europe/Moscow"/>
-    <property name="os.name" value="Windows 11"/>
-    <property name="java.vm.specification.version" value="26"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="user.country" value="RU"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-26\bin"/>
-    <property name="sun.java.command" value="C:\Users\rabat\AppData\Local\Temp\surefire2442024881545331747\surefirebooter-20260420232834675_3.jar C:\Users\rabat\AppData\Local\Temp\surefire2442024881545331747 2026-04-20T23-28-34_394-jvmRun1 surefire-20260420232834675_1tmp surefire_0-20260420232834675_2tmp"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/fedashov/nnsu/QA/ST-6/my-app/target/surefire/surefirebooter-20260523152627226_3.jar /home/fedashov/nnsu/QA/ST-6/my-app/target/surefire 2026-05-23T15-26-25_350-jvmRun1 surefire-20260523152627226_1tmp surefire_0-20260523152627226_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\rabat\ST-6\my-app\target\test-classes;C:\Users\rabat\ST-6\my-app\target\classes;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\rabat\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rabat\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\rabat\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\rabat\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
+    <property name="surefire.test.class.path" value="/home/fedashov/nnsu/QA/ST-6/my-app/target/test-classes:/home/fedashov/nnsu/QA/ST-6/my-app/target/classes:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/fedashov/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/fedashov/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/fedashov/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/fedashov/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/fedashov/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\rabat"/>
-    <property name="user.language" value="ru"/>
+    <property name="user.home" value="/home/fedashov"/>
+    <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2026-03-17"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-26"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\rabat\ST-6\my-app"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/fedashov/nnsu/QA/ST-6/my-app"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\rabat\AppData\Local\Temp\surefire2442024881545331747\surefirebooter-20260420232834675_3.jar"/>
-    <property name="user.script" value=""/>
+    <property name="surefire.real.class.path" value="/home/fedashov/nnsu/QA/ST-6/my-app/target/surefire/surefirebooter-20260523152627226_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="26+35-2893"/>
-    <property name="user.name" value="rabat"/>
-    <property name="stdout.encoding" value="Cp1251"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.runtime.version" value="17.0.18+8-Ubuntu-124.04.1"/>
+    <property name="user.name" value="fedashov"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.6.114.1-microsoft-standard-WSL2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="localRepository" value="C:\Users\rabat\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\rabat\AppData\Local\Temp\"/>
-    <property name="java.version" value="26"/>
-    <property name="user.dir" value="C:\Users\rabat\ST-6\my-app"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/fedashov/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.18"/>
+    <property name="user.dir" value="/home/fedashov/nnsu/QA/ST-6/my-app"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1251"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-26\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk-26\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\rabat\mpi\Bin\;C:\Users\rabat\AppData\Local\Programs\Python\Python313\python.exe;C:\Windows\System32\HWAudioDriver;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-2024.2.3\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\CMake\bin;D:\Git\cmd;D:\Git\mingw64\bin;D:\Git\usr\bin;D:\apache-maven-3.9.14\bin;C:\Users\rabat\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\rabat\AppData\Local\Programs\Python\Python312\;C:\Users\rabat\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\rabat\AppData\Local\Programs\Python\Python311\;C:\Program Files\Microsoft MPI\Bin;C:\Users\rabat\AppData\Local\Programs\Python\Python313\python.exe;C:\Users\rabat\anaconda3\bin;C:\Users\rabat\anaconda3\condabin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\System32\HWAudioDriver;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\dotnet;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk-2024.2.3\bin;C:\Program Files\CMake\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Users\rabat\AppData\;C:\Users\rabat\.dotnet\tools;C:\Users\rabat\AppData\Local\GitHubDesktop\bin;C:\Users\rabat\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\bin;;C:\Users\rabat\AppData\Local\Python\bin;;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="Cp1251"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="26+35-2893"/>
-    <property name="stdin.encoding" value="Cp1251"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="17.0.18+8-Ubuntu-124.04.1"/>
+    <property name="java.specification.maintenance.version" value="1"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="70.0"/>
+    <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCheckStateOWinVertical" classname="com.mycompany.app.ProgramTest" time="0.055"/>
-  <testcase name="testMultipleBestMovesRandomSelection" classname="com.mycompany.app.ProgramTest" time="0.121">
+  <testcase name="testCheckStateOWinVertical" classname="com.mycompany.app.ProgramTest" time="0.046"/>
+  <testcase name="testMultipleBestMovesRandomSelection" classname="com.mycompany.app.ProgramTest" time="0.111">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -155,14 +147,14 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testUtilityPrintArrayList" classname="com.mycompany.app.ProgramTest" time="0.007">
+  <testcase name="testUtilityPrintArrayList" classname="com.mycompany.app.ProgramTest" time="0.006">
     <system-out><![CDATA[
 1-3-5-
 ]]></system-out>
   </testcase>
   <testcase name="testGenerateMovesAllEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testCheckStateWithDifferentSymbol" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToePanelGameStateAfterMove" classname="com.mycompany.app.ProgramTest" time="0.273">
+  <testcase name="testCheckStateWithDifferentSymbol" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToePanelGameStateAfterMove" classname="com.mycompany.app.ProgramTest" time="0.288">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -175,14 +167,14 @@ minimax:   9(-100)
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
   <testcase name="testEvaluatePositionNotTerminal" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testCheckStateDraw" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testUtilityPrintIntArray" classname="com.mycompany.app.ProgramTest" time="0.004">
+  <testcase name="testCheckStateDraw" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testUtilityPrintIntArray" classname="com.mycompany.app.ProgramTest" time="0.001">
     <system-out><![CDATA[
 1-2-3-4-5-6-7-8-9-
 ]]></system-out>
   </testcase>
-  <testcase name="testMaxMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.003"/>
-  <testcase name="testTicTacToePanelCellBecomesDisabledAfterClick" classname="com.mycompany.app.ProgramTest" time="0.154">
+  <testcase name="testMaxMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToePanelCellBecomesDisabledAfterClick" classname="com.mycompany.app.ProgramTest" time="0.15">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -194,8 +186,8 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelConstructor" classname="com.mycompany.app.ProgramTest" time="0.006"/>
-  <testcase name="testMiniMaxReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.059">
+  <testcase name="testTicTacToePanelConstructor" classname="com.mycompany.app.ProgramTest" time="0.004"/>
+  <testcase name="testMiniMaxReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.053">
     <system-out><![CDATA[
 minimax:   1(0) 
 minimax:   2(0) 
@@ -206,11 +198,11 @@ minimax:   6(0)
 minimax:   7(0) 
 minimax:   8(0) 
 minimax:   9(0) 
-minimax best:   3(0) Steps counted: 294777]]></system-out>
+minimax best:   1(0) Steps counted: 294777]]></system-out>
   </testcase>
-  <testcase name="testGameInitialState" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testCheckStateXWinVertical" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToePanelCannotClickSameCellTwice" classname="com.mycompany.app.ProgramTest" time="0.222">
+  <testcase name="testGameInitialState" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="testCheckStateXWinVertical" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToePanelCannotClickSameCellTwice" classname="com.mycompany.app.ProgramTest" time="0.216">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -222,7 +214,7 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testMiniMaxBlocksFork" classname="com.mycompany.app.ProgramTest" time="0.003">
+  <testcase name="testMiniMaxBlocksFork" classname="com.mycompany.app.ProgramTest" time="0.002">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(0) 
@@ -232,7 +224,7 @@ minimax:   7(0)
 minimax:   8(-100) 
 minimax best:   3(0) Steps counted: 636]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelComputerDoesNotMoveOnEmptyCell" classname="com.mycompany.app.ProgramTest" time="0.148">
+  <testcase name="testTicTacToePanelComputerDoesNotMoveOnEmptyCell" classname="com.mycompany.app.ProgramTest" time="0.154">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -245,16 +237,16 @@ minimax:   9(-100)
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
   <testcase name="testCheckStateXWinHorizontal" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToeCellSetMarkerO" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testTicTacToeCellSetMarkerX" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToeCellSetMarkerO" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="testTicTacToeCellSetMarkerX" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testCheckStateOWinHorizontal" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testEvaluatePositionWithNullPlayer" classname="com.mycompany.app.ProgramTest" time="0.001"/>
-  <testcase name="testTicTacToeCellAllCoordinates" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToeCellAllCoordinates" classname="com.mycompany.app.ProgramTest" time="0.003"/>
   <testcase name="testMinMoveWithOneMoveLeft" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testTicTacToeCellConstructor" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testMinMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.058"/>
-  <testcase name="testMaxMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.036"/>
-  <testcase name="testMiniMaxOnEmptyBoardReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.04">
+  <testcase name="testMinMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.072"/>
+  <testcase name="testMaxMoveOnEmptyBoard" classname="com.mycompany.app.ProgramTest" time="0.035"/>
+  <testcase name="testMiniMaxOnEmptyBoardReturnsValidMove" classname="com.mycompany.app.ProgramTest" time="0.035">
     <system-out><![CDATA[
 minimax:   1(0) 
 minimax:   2(0) 
@@ -265,9 +257,9 @@ minimax:   6(0)
 minimax:   7(0) 
 minimax:   8(0) 
 minimax:   9(0) 
-minimax best:   7(0) Steps counted: 294777]]></system-out>
+minimax best:   5(0) Steps counted: 294777]]></system-out>
   </testcase>
-  <testcase name="testProgramMainMethod" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="testProgramMainMethod" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testTicTacToePanelGameInitialization" classname="com.mycompany.app.ProgramTest" time="0.002"/>
   <testcase name="testCheckStateXWinDiagonal" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testTicTacToePanelCellsInitialization" classname="com.mycompany.app.ProgramTest" time="0.001"/>
@@ -276,9 +268,9 @@ minimax best:   7(0) Steps counted: 294777]]></system-out>
 X-O- -X- -O- -X- -
 ]]></system-out>
   </testcase>
-  <testcase name="testProgramStaticFields" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testCheckStateNoWinnerNotFull" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToePanelFirstMoveByX" classname="com.mycompany.app.ProgramTest" time="0.149">
+  <testcase name="testProgramStaticFields" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testCheckStateNoWinnerNotFull" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToePanelFirstMoveByX" classname="com.mycompany.app.ProgramTest" time="0.145">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -290,7 +282,7 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   5(0) Steps counted: 31972]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelMultipleMoves" classname="com.mycompany.app.ProgramTest" time="0.29">
+  <testcase name="testTicTacToePanelMultipleMoves" classname="com.mycompany.app.ProgramTest" time="0.292">
     <system-out><![CDATA[
 minimax:   2(-100) 
 minimax:   3(-100) 
@@ -309,8 +301,8 @@ minimax:   8(-100)
 minimax:   9(-100) 
 minimax best:   3(0) Steps counted: 477]]></system-out>
   </testcase>
-  <testcase name="testGenerateMovesNoEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.002"/>
-  <testcase name="testTicTacToePanelComputerResponds" classname="com.mycompany.app.ProgramTest" time="0.149">
+  <testcase name="testGenerateMovesNoEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="testTicTacToePanelComputerResponds" classname="com.mycompany.app.ProgramTest" time="0.146">
     <system-out><![CDATA[
 minimax:   1(0) 
 minimax:   2(-100) 
@@ -320,9 +312,9 @@ minimax:   6(-100)
 minimax:   7(0) 
 minimax:   8(-100) 
 minimax:   9(0) 
-minimax best:   3(0) Steps counted: 29632]]></system-out>
+minimax best:   1(0) Steps counted: 29632]]></system-out>
   </testcase>
-  <testcase name="testTicTacToePanelAllCellsClickableInitially" classname="com.mycompany.app.ProgramTest" time="0.004"/>
+  <testcase name="testTicTacToePanelAllCellsClickableInitially" classname="com.mycompany.app.ProgramTest" time="0.003"/>
   <testcase name="testCheckStateOWinDiagonal2" classname="com.mycompany.app.ProgramTest" time="0.001"/>
   <testcase name="testTicTacToeCellSetMarkerOverwrites" classname="com.mycompany.app.ProgramTest" time="0.002"/>
 </testsuite>
