@@ -37,7 +37,7 @@
           <forkCount>1</forkCount>
           <useManifestOnlyJar>false</useManifestOnlyJar>
           <testFailureIgnore>true</testFailureIgnore>
-          <argLine>@{argLine} -Djdk.net.URLClassPath.disableClassPathURLCheck=true -Djava.awt.headless=true -Djava.security.manager=allow</argLine>
+          <argLine>@{argLine} -Djdk.net.URLClassPath.disableClassPathURLCheck=true -Djava.awt.headless=true</argLine>
         </configuration>
       </plugin>
       <plugin>
