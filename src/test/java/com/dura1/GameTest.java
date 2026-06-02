@@ -127,7 +127,7 @@ public class GameTest {
         char[] b = {'X', 'X', ' ', ' ', 'O', ' ', ' ', ' ', ' '};
         System.arraycopy(b, 0, game.board, 0, 9);
         game.player2.symbol = 'O';
-        int move = game.MiniMax(game.board, game.player2);
+        int move = game.chooseBestMove(game.board, game.player2);
         Assert.assertEquals(3, move);
     }
 
