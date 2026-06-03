@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="GameTest" time="0.364" tests="13" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\klimo\Testing\ST6\ST-6\target\test-classes;C:\Users\klimo\Testing\ST6\ST-6\target\classes;C:\Users\klimo\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\klimo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="JetBrains s.r.o."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://www.jetbrains.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.1\jbr\bin"/>
+    <property name="sun.java.command" value="C:\Users\klimo\AppData\Local\Temp\surefire1755449315346612830\surefirebooter-20260603143831736_3.jar C:\Users\klimo\AppData\Local\Temp\surefire1755449315346612830 2026-06-03T14-38-31_567-jvmRun1 surefire-20260603143831736_1tmp surefire_0-20260603143831736_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\klimo\Testing\ST6\ST-6\target\test-classes;C:\Users\klimo\Testing\ST6\ST-6\target\classes;C:\Users\klimo\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\klimo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\klimo"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.1\jbr"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\klimo\Testing\ST6\ST-6"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="intellij.os.virtualization" value="none"/>
+    <property name="jbr.virtualization.information" value="Hyper-V role"/>
+    <property name="surefire.real.class.path" value="C:\Users\klimo\AppData\Local\Temp\surefire1755449315346612830\surefirebooter-20260603143831736_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.2+1-b329.117"/>
+    <property name="user.name" value="klimo"/>
+    <property name="stdout.encoding" value="Cp1251"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="JBR-25.0.2+1-329.117-jcef"/>
+    <property name="localRepository" value="C:\Users\klimo\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://youtrack.jetbrains.com/issues/JBR"/>
+    <property name="java.io.tmpdir" value="C:\Users\klimo\AppData\Local\Temp\"/>
+    <property name="java.version" value="25.0.2"/>
+    <property name="user.dir" value="C:\Users\klimo\Testing\ST6\ST-6"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.1\jbr\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.1\jbr\bin;C:\Users\klimo\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\CMake\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\klimo\.cargo\bin;C:\Users\klimo\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\klimo\AppData\Local\Programs\Python\Python310\;C:\Users\klimo\AppData\Local\Microsoft\WindowsApps;C:\Users\klimo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\klimo\AppData\Local\spicetify;C:\FFmpeg;C:\Program Files\JetBrains\IntelliJ IDEA 2024.3\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2024.3.1.1\bin;C:\Users\klimo\AppData\Local\ffmpegio\ffmpeg-downloader\ffmpeg\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.3\bin;C:\Users\klimo\.dotnet\tools;C:\Program Files\JetBrains\PyCharm Community Edition 2025.1.2\bin;;C:\Users\klimo\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.1\bin;C:\Program Files\JetBrains\RustRover 2026.1.2\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1251"/>
+    <property name="java.vendor" value="JetBrains s.r.o."/>
+    <property name="java.vm.version" value="25.0.2+1-b329.117"/>
+    <property name="stdin.encoding" value="Cp1251"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testCheckStateDraw" classname="GameTest" time="0.012"/>
+  <testcase name="testCheckStateOWin" classname="GameTest" time="0.0"/>
+  <testcase name="testCheckStateXWin" classname="GameTest" time="0.0"/>
+  <testcase name="testMiniMaxWinningMove" classname="GameTest" time="0.008">
+    <system-out><![CDATA[
+minimax:   3(100) 
+minimax:   6(0) 
+minimax:   7(-100) 
+minimax:   8(-100) 
+minimax:   9(-100) 
+minimax best:   3(100) Steps counted: 83]]></system-out>
+  </testcase>
+  <testcase name="testEvaluatePosition" classname="GameTest" time="0.0"/>
+  <testcase name="testCheckStatePlaying" classname="GameTest" time="0.0"/>
+  <testcase name="testGenerateMoves" classname="GameTest" time="0.0"/>
+  <testcase name="testMiniMaxOnlyMove" classname="GameTest" time="0.002">
+    <system-out><![CDATA[
+minimax:   9(0) 
+minimax best:   9(0) Steps counted: 0]]></system-out>
+  </testcase>
+  <testcase name="testUtility" classname="GameTest" time="0.003">
+    <system-out><![CDATA[
+X-O-X- - - - - - -
+
+1-2-3-4-5-6-7-8-9-
+
+1-5-
+]]></system-out>
+  </testcase>
+  <testcase name="testInitialState" classname="GameTest" time="0.0"/>
+  <testcase name="testCellSetMarker" classname="GameTest" time="0.148"/>
+  <testcase name="testEvaluateDraw" classname="GameTest" time="0.0"/>
+  <testcase name="testMiniMaxValidRange" classname="GameTest" time="0.083">
+    <system-out><![CDATA[
+minimax:   1(0) 
+minimax:   2(0) 
+minimax:   3(0) 
+minimax:   4(0) 
+minimax:   5(0) 
+minimax:   6(0) 
+minimax:   7(0) 
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   6(0) Steps counted: 294777]]></system-out>
+  </testcase>
+</testsuite>
