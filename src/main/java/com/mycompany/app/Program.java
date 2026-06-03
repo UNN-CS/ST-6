@@ -229,7 +229,6 @@ class TicTacToeCell extends JButton {
     public int getNum() {
         return num;
     }
-
 }
 
 class Utility {
