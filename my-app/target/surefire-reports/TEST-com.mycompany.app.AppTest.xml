@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.AppTest" time="1.282" tests="42" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="/home/e/IdeaProjects/ST-6/my-app/target/test-classes:/home/e/IdeaProjects/ST-6/my-app/target/classes:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/e/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/e/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/e/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/e/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/e/IdeaProjects/ST-6/my-app/target/surefire/surefirebooter-20260606151643359_3.jar /home/e/IdeaProjects/ST-6/my-app/target/surefire 2026-06-06T15-16-40_891-jvmRun1 surefire-20260606151643359_1tmp surefire_0-20260606151643359_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/e/IdeaProjects/ST-6/my-app/target/test-classes:/home/e/IdeaProjects/ST-6/my-app/target/classes:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/home/e/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/e/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/home/e/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/home/e/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/home/e/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/e"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/e/IdeaProjects/ST-6/my-app"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/e/IdeaProjects/ST-6/my-app/target/surefire/surefirebooter-20260606151643359_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.7+6-Ubuntu-0ubuntu120.04"/>
+    <property name="user.name" value="e"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.15.0-78-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/e/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.7"/>
+    <property name="user.dir" value="/home/e/IdeaProjects/ST-6/my-app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.7+6-Ubuntu-0ubuntu120.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testPlayer2Symbol" classname="com.mycompany.app.AppTest" time="0.074"/>
+  <testcase name="testPlayerDefaultWin" classname="com.mycompany.app.AppTest" time="0.007"/>
+  <testcase name="testCheckStateDraw" classname="com.mycompany.app.AppTest" time="0.011"/>
+  <testcase name="testCheckStateOWin" classname="com.mycompany.app.AppTest" time="0.008"/>
+  <testcase name="testUtilityPrintIntBoard" classname="com.mycompany.app.AppTest" time="0.024">
+    <system-out><![CDATA[
+1-2-3-4-5-6-7-8-9-
+]]></system-out>
+  </testcase>
+  <testcase name="testMinMoveOnTerminalXWin" classname="com.mycompany.app.AppTest" time="0.009"/>
+  <testcase name="testMiniMaxReturnsValidMove" classname="com.mycompany.app.AppTest" time="0.372">
+    <system-out><![CDATA[
+minimax:   1(0) 
+minimax:   2(0) 
+minimax:   3(0) 
+minimax:   4(0) 
+minimax:   5(0) 
+minimax:   6(0) 
+minimax:   7(0) 
+minimax:   8(0) 
+minimax:   9(0) 
+minimax best:   5(0) Steps counted: 294777]]></system-out>
+  </testcase>
+  <testcase name="testCheckStatePlaying" classname="com.mycompany.app.AppTest" time="0.004"/>
+  <testcase name="testBoardSize" classname="com.mycompany.app.AppTest" time="0.006"/>
+  <testcase name="testMiniMaxOnNearlyFullBoard" classname="com.mycompany.app.AppTest" time="0.009">
+    <system-out><![CDATA[
+minimax:   3(0) 
+minimax:   6(100) 
+minimax:   8(-100) 
+minimax best:   6(100) Steps counted: 5]]></system-out>
+  </testcase>
+  <testcase name="testUtilityPrintMoves" classname="com.mycompany.app.AppTest" time="0.009">
+    <system-out><![CDATA[
+1-3-5-
+]]></system-out>
+  </testcase>
+  <testcase name="testEvaluatePositionXWinForO" classname="com.mycompany.app.AppTest" time="0.009"/>
+  <testcase name="testEvaluatePositionXWinForX" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testMinMoveReturnsValue" classname="com.mycompany.app.AppTest" time="0.032"/>
+  <testcase name="testMaxMoveReturnsValue" classname="com.mycompany.app.AppTest" time="0.027"/>
+  <testcase name="testCellInitialMarker" classname="com.mycompany.app.AppTest" time="0.367"/>
+  <testcase name="testEvaluatePositionPlaying" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testEvaluatePositionDraw" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testGenerateMovesFullBoard" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testInitialBoardEmpty" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testInitialState" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testCellSetMarker" classname="com.mycompany.app.AppTest" time="0.004"/>
+  <testcase name="testCellDisabledAfterSetMarker" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testEvaluatePositionOWinForO" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testEvaluatePositionOWinForX" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testUtilityPrintCharBoard" classname="com.mycompany.app.AppTest" time="0.003">
+    <system-out><![CDATA[
+X-O-X-O-X-O-X-O-X-
+]]></system-out>
+  </testcase>
+  <testcase name="testCheckStateXWinCol1" classname="com.mycompany.app.AppTest" time="0.025"/>
+  <testcase name="testCheckStateXWinCol2" classname="com.mycompany.app.AppTest" time="0.006"/>
+  <testcase name="testCheckStateXWinCol3" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testCheckStateXWinRow1" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testCheckStateXWinRow2" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testCheckStateXWinRow3" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testGenerateMovesEmptyBoard" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testINFValue" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testPlayer1Symbol" classname="com.mycompany.app.AppTest" time="0.002"/>
+  <testcase name="testCheckStateXWinDiag1" classname="com.mycompany.app.AppTest" time="0.004"/>
+  <testcase name="testCheckStateXWinDiag2" classname="com.mycompany.app.AppTest" time="0.001"/>
+  <testcase name="testGenerateMovesPartialBoard" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testCellGetCol" classname="com.mycompany.app.AppTest" time="0.009"/>
+  <testcase name="testCellGetNum" classname="com.mycompany.app.AppTest" time="0.003"/>
+  <testcase name="testCellGetRow" classname="com.mycompany.app.AppTest" time="0.004"/>
+  <testcase name="testMaxMoveOnTerminalOWin" classname="com.mycompany.app.AppTest" time="0.002"/>
+</testsuite>
