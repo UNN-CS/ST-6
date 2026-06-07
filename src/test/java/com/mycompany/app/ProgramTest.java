@@ -14,11 +14,17 @@ import org.junit.jupiter.api.Test;
 class ProgramTest {
 
     @Test
+    void mainRunsDemoWithoutError() {
+        Program.main(new String[0]);
+        assertTrue(true);
+    }
+
+    @Test
     void initialBoardIsEmpty() {
-        Game session = new Game();
-        for (int r = 0; r < Game.SIZE; r++) {
-            for (int c = 0; c < Game.SIZE; c++) {
-                assertEquals(Game.EMPTY, session.getCell(r, c));
+        Game board = new Game();
+        for (int row = 0; row < Game.SIZE; row++) {
+            for (int col = 0; col < Game.SIZE; col++) {
+                assertEquals(Game.EMPTY, board.getCell(row, col));
             }
         }
     }
@@ -35,153 +41,153 @@ class ProgramTest {
 
     @Test
     void validMoveIsAccepted() {
-        Game session = new Game();
-        assertTrue(session.placeMove(0, 0));
-        assertEquals(Game.X, session.getCell(0, 0));
+        Game board = new Game();
+        assertTrue(board.placeMove(0, 0));
+        assertEquals(Game.X, board.getCell(0, 0));
     }
 
     @Test
     void invalidMoveOutsideBoardIsRejected() {
-        Game session = new Game();
-        assertFalse(session.placeMove(-1, 0));
-        assertFalse(session.placeMove(0, 3));
+        Game board = new Game();
+        assertFalse(board.placeMove(-1, 0));
+        assertFalse(board.placeMove(0, 3));
     }
 
     @Test
     void invalidMoveOnOccupiedCellIsRejected() {
-        Game session = new Game();
-        session.placeMove(0, 0);
-        assertFalse(session.placeMove(0, 0));
+        Game board = new Game();
+        board.placeMove(0, 0);
+        assertFalse(board.placeMove(0, 0));
     }
 
     @Test
     void playerSwitchesAfterValidMove() {
-        Game session = new Game();
-        session.placeMove(0, 0);
-        assertEquals(Game.O, session.getCurrentPlayer());
+        Game board = new Game();
+        board.placeMove(0, 0);
+        assertEquals(Game.O, board.getCurrentPlayer());
     }
 
     @Test
     void playerDoesNotSwitchAfterInvalidMove() {
-        Game session = new Game();
-        session.placeMove(-1, 0);
-        assertEquals(Game.X, session.getCurrentPlayer());
+        Game board = new Game();
+        board.placeMove(-1, 0);
+        assertEquals(Game.X, board.getCurrentPlayer());
     }
 
     @Test
     void resetBoardClearsMovesAndRestoresCurrentPlayer() {
-        Game session = new Game();
-        session.placeMove(0, 0);
-        session.reset();
-        assertEquals(Game.EMPTY, session.getCell(0, 0));
-        assertEquals(Game.X, session.getCurrentPlayer());
+        Game board = new Game();
+        board.placeMove(0, 0);
+        board.reset();
+        assertEquals(Game.EMPTY, board.getCell(0, 0));
+        assertEquals(Game.X, board.getCurrentPlayer());
     }
 
     @Test
     void xWinsByRow() {
-        Game session = new Game();
-        fillRow(session, 0, Game.X);
-        assertEquals(GameState.X_WON, session.getState());
+        Game board = new Game();
+        paintRow(board, 0, Game.X);
+        assertEquals(GameState.X_WON, board.getState());
     }
 
     @Test
     void oWinsByRow() {
-        Game session = new Game();
-        fillRow(session, 2, Game.O);
-        assertEquals(GameState.O_WON, session.getState());
+        Game board = new Game();
+        paintRow(board, 2, Game.O);
+        assertEquals(GameState.O_WON, board.getState());
     }
 
     @Test
     void xWinsByColumn() {
-        Game session = new Game();
-        fillColumn(session, 1, Game.X);
-        assertEquals(GameState.X_WON, session.getState());
+        Game board = new Game();
+        paintColumn(board, 1, Game.X);
+        assertEquals(GameState.X_WON, board.getState());
     }
 
     @Test
     void oWinsByColumn() {
-        Game session = new Game();
-        fillColumn(session, 2, Game.O);
-        assertEquals(GameState.O_WON, session.getState());
+        Game board = new Game();
+        paintColumn(board, 2, Game.O);
+        assertEquals(GameState.O_WON, board.getState());
     }
 
     @Test
     void xWinsByMainDiagonal() {
-        Game session = new Game();
-        session.setCellForTest(0, 0, Game.X);
-        session.setCellForTest(1, 1, Game.X);
-        session.setCellForTest(2, 2, Game.X);
-        assertEquals(GameState.X_WON, session.getState());
+        Game board = new Game();
+        board.setCellForTest(0, 0, Game.X);
+        board.setCellForTest(1, 1, Game.X);
+        board.setCellForTest(2, 2, Game.X);
+        assertEquals(GameState.X_WON, board.getState());
     }
 
     @Test
     void oWinsByOtherDiagonal() {
-        Game session = new Game();
-        session.setCellForTest(0, 2, Game.O);
-        session.setCellForTest(1, 1, Game.O);
-        session.setCellForTest(2, 0, Game.O);
-        assertEquals(GameState.O_WON, session.getState());
+        Game board = new Game();
+        board.setCellForTest(0, 2, Game.O);
+        board.setCellForTest(1, 1, Game.O);
+        board.setCellForTest(2, 0, Game.O);
+        assertEquals(GameState.O_WON, board.getState());
     }
 
     @Test
     void drawIsDetected() {
-        assertEquals(GameState.DRAW, buildDrawBoard().getState());
+        assertEquals(GameState.DRAW, createDrawnBoard().getState());
     }
 
     @Test
     void gameOverAfterWin() {
-        Game session = new Game();
-        fillRow(session, 0, Game.X);
-        assertTrue(session.isGameOver());
+        Game board = new Game();
+        paintRow(board, 0, Game.X);
+        assertTrue(board.isGameOver());
     }
 
     @Test
     void gameOverAfterDraw() {
-        assertTrue(buildDrawBoard().isGameOver());
+        assertTrue(createDrawnBoard().isGameOver());
     }
 
     @Test
     void boardToStringReturnsExpectedContent() {
-        Game session = new Game();
-        session.placeMove(0, 0);
-        assertEquals("X|-|-\n-|-|-\n-|-|-", session.boardToString());
+        Game board = new Game();
+        board.placeMove(0, 0);
+        assertEquals("X|-|-\n-|-|-\n-|-|-", board.boardToString());
     }
 
     @Test
     void minimaxScoresWinningPositionCorrectly() {
-        Game session = new Game();
-        fillRow(session, 0, Game.X);
-        assertEquals(10, session.minimax(true, Game.X));
+        Game board = new Game();
+        paintRow(board, 0, Game.X);
+        assertEquals(10, board.minimax(true, Game.X));
     }
 
     @Test
     void minimaxScoresLosingPositionCorrectly() {
-        Game session = new Game();
-        fillRow(session, 0, Game.X);
-        assertEquals(-10, session.minimax(true, Game.O));
+        Game board = new Game();
+        paintRow(board, 0, Game.X);
+        assertEquals(-10, board.minimax(true, Game.O));
     }
 
     @Test
     void minimaxScoresDrawPositionCorrectly() {
-        assertEquals(0, buildDrawBoard().minimax(true, Game.X));
+        assertEquals(0, createDrawnBoard().minimax(true, Game.X));
     }
 
     @Test
     void bestMoveBlocksOpponentWin() {
-        Game session = new Game();
-        session.setCellForTest(0, 0, Game.X);
-        session.setCellForTest(0, 1, Game.X);
-        session.setCellForTest(1, 1, Game.O);
-        assertEquals(new Move(0, 2), session.findBestMove(Game.O));
+        Game board = new Game();
+        board.setCellForTest(0, 0, Game.X);
+        board.setCellForTest(0, 1, Game.X);
+        board.setCellForTest(1, 1, Game.O);
+        assertEquals(new Move(0, 2), board.findBestMove(Game.O));
     }
 
     @Test
     void bestMoveWinsImmediatelyWhenPossible() {
-        Game session = new Game();
-        session.setCellForTest(0, 0, Game.O);
-        session.setCellForTest(0, 1, Game.O);
-        session.setCellForTest(1, 1, Game.X);
-        assertEquals(new Move(0, 2), session.findBestMove(Game.O));
+        Game board = new Game();
+        board.setCellForTest(0, 0, Game.O);
+        board.setCellForTest(0, 1, Game.O);
+        board.setCellForTest(1, 1, Game.X);
+        assertEquals(new Move(0, 2), board.findBestMove(Game.O));
     }
 
     @Test
@@ -191,42 +197,42 @@ class ProgramTest {
 
     @Test
     void noBestMoveExistsWhenBoardIsFull() {
-        assertNull(buildDrawBoard().findBestMove(Game.X));
+        assertNull(createDrawnBoard().findBestMove(Game.X));
     }
 
     @Test
     void bestMoveReturnsSomeMoveForNonTerminalBoard() {
-        Game session = new Game();
-        session.placeMove(0, 0);
-        assertNotNull(session.findBestMove(Game.O));
+        Game board = new Game();
+        board.placeMove(0, 0);
+        assertNotNull(board.findBestMove(Game.O));
     }
 
     @Test
     void availableMovesCountIsCorrect() {
-        Game session = new Game();
-        session.placeMove(0, 0);
-        session.placeMove(1, 1);
-        assertEquals(7, session.getAvailableMoves().size());
+        Game board = new Game();
+        board.placeMove(0, 0);
+        board.placeMove(1, 1);
+        assertEquals(7, board.getAvailableMoves().size());
     }
 
     @Test
     void availableMovesContainExpectedMove() {
-        List<Move> moves = new Game().getAvailableMoves();
-        assertTrue(moves.contains(new Move(2, 2)));
+        List<Move> options = new Game().getAvailableMoves();
+        assertTrue(options.contains(new Move(2, 2)));
     }
 
     @Test
     void currentPlayerGetterWorks() {
-        Game session = new Game();
-        session.switchPlayer();
-        assertEquals(Game.O, session.getCurrentPlayer());
+        Game board = new Game();
+        board.switchPlayer();
+        assertEquals(Game.O, board.getCurrentPlayer());
     }
 
     @Test
     void winnerGetterReturnsWinner() {
-        Game session = new Game();
-        fillColumn(session, 0, Game.O);
-        assertEquals(Character.valueOf(Game.O), session.getWinner());
+        Game board = new Game();
+        paintColumn(board, 0, Game.O);
+        assertEquals(Character.valueOf(Game.O), board.getWinner());
     }
 
     @Test
@@ -236,49 +242,49 @@ class ProgramTest {
 
     @Test
     void emptyCellCheckWorks() {
-        Game session = new Game();
-        assertTrue(session.isEmptyCell(2, 2));
-        session.placeMove(2, 2);
-        assertFalse(session.isEmptyCell(2, 2));
+        Game board = new Game();
+        assertTrue(board.isEmptyCell(2, 2));
+        board.placeMove(2, 2);
+        assertFalse(board.isEmptyCell(2, 2));
     }
 
     @Test
     void fullBoardCheckWorks() {
-        assertTrue(buildDrawBoard().isFullBoard());
+        assertTrue(createDrawnBoard().isFullBoard());
     }
 
     @Test
     void invalidGetCellThrows() {
-        Game session = new Game();
-        assertThrows(IllegalArgumentException.class, () -> session.getCell(5, 0));
+        Game board = new Game();
+        assertThrows(IllegalArgumentException.class, () -> board.getCell(5, 0));
     }
 
     @Test
     void setCellRejectsUnknownPlayer() {
-        Game session = new Game();
+        Game board = new Game();
         assertThrows(IllegalArgumentException.class,
-            () -> session.setCellForTest(0, 0, 'A'));
+            () -> board.setCellForTest(0, 0, 'A'));
     }
 
     @Test
     void setCurrentPlayerRejectsUnknownPlayer() {
-        Game session = new Game();
+        Game board = new Game();
         assertThrows(IllegalArgumentException.class,
-            () -> session.setCurrentPlayerForTest('B'));
+            () -> board.setCurrentPlayerForTest('B'));
     }
 
     @Test
     void setCurrentPlayerAcceptsO() {
-        Game session = new Game();
-        session.setCurrentPlayerForTest(Game.O);
-        assertEquals(Game.O, session.getCurrentPlayer());
+        Game board = new Game();
+        board.setCurrentPlayerForTest(Game.O);
+        assertEquals(Game.O, board.getCurrentPlayer());
     }
 
     @Test
     void moveGettersReturnCoordinates() {
-        Move step = new Move(1, 2);
-        assertEquals(1, step.getRow());
-        assertEquals(2, step.getCol());
+        Move position = new Move(1, 2);
+        assertEquals(1, position.getRow());
+        assertEquals(2, position.getCol());
     }
 
     @Test
@@ -293,41 +299,35 @@ class ProgramTest {
 
     @Test
     void equalMovesHaveSameHashCode() {
-        Move a = new Move(2, 1);
-        Move b = new Move(2, 1);
-        assertEquals(a.hashCode(), b.hashCode());
+        Move first = new Move(2, 1);
+        Move second = new Move(2, 1);
+        assertEquals(first.hashCode(), second.hashCode());
     }
 
-    @Test
-    void mainRunsDemoWithoutError() {
-        Program.main(new String[0]);
-        assertTrue(true);
-    }
-
-    private static void fillRow(Game session, int row, char mark) {
+    private static void paintRow(Game board, int row, char mark) {
         for (int col = 0; col < Game.SIZE; col++) {
-            session.setCellForTest(row, col, mark);
+            board.setCellForTest(row, col, mark);
         }
     }
 
-    private static void fillColumn(Game session, int col, char mark) {
+    private static void paintColumn(Game board, int col, char mark) {
         for (int row = 0; row < Game.SIZE; row++) {
-            session.setCellForTest(row, col, mark);
+            board.setCellForTest(row, col, mark);
         }
     }
 
-    private static Game buildDrawBoard() {
-        Game session = new Game();
-        char[][] layout = {
+    private static Game createDrawnBoard() {
+        Game board = new Game();
+        char[][] pattern = {
             {Game.X, Game.O, Game.X},
             {Game.X, Game.O, Game.O},
             {Game.O, Game.X, Game.X}
         };
-        for (int r = 0; r < Game.SIZE; r++) {
-            for (int c = 0; c < Game.SIZE; c++) {
-                session.setCellForTest(r, c, layout[r][c]);
+        for (int row = 0; row < Game.SIZE; row++) {
+            for (int col = 0; col < Game.SIZE; col++) {
+                board.setCellForTest(row, col, pattern[row][col]);
             }
         }
-        return session;
+        return board;
     }
 }

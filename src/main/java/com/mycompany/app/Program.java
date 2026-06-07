@@ -2,48 +2,52 @@ package com.mycompany.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 enum GameState {
-    DRAW,
-    O_WON,
     PLAYING,
-    X_WON
+    X_WON,
+    O_WON,
+    DRAW
 }
 
 final class Move {
-    private final int col;
-    private final int row;
+    private final int rowIndex;
+    private final int columnIndex;
 
     Move(int row, int col) {
-        this.row = row;
-        this.col = col;
+        this.rowIndex = row;
+        this.columnIndex = col;
     }
 
     int getRow() {
-        return row;
+        return rowIndex;
     }
 
     int getCol() {
-        return col;
+        return columnIndex;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Move)) {
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Move)) {
             return false;
         }
-        Move that = (Move) obj;
-        return row == that.row && col == that.col;
+        Move that = (Move) other;
+        return rowIndex == that.rowIndex && columnIndex == that.columnIndex;
     }
 
     @Override
     public int hashCode() {
-        return row * 31 + col;
+        return Objects.hash(rowIndex, columnIndex);
     }
 
     @Override
     public String toString() {
-        return "(" + row + ", " + col + ")";
+        return String.format("(%d, %d)", rowIndex, columnIndex);
     }
 }
 
@@ -53,77 +57,77 @@ class Game {
     static final char EMPTY = ' ';
     static final int SIZE = 3;
 
-    private static final int WIN_SCORE = 10;
+    private static final int TERMINAL_SCORE = 10;
 
-    private final char[][] cells;
-    private char activeMark;
+    private final char[][] grid;
+    private char turn;
 
     Game() {
-        cells = new char[SIZE][SIZE];
+        grid = new char[SIZE][SIZE];
         reset();
     }
 
     void reset() {
-        for (int r = 0; r < SIZE; r++) {
-            for (int c = 0; c < SIZE; c++) {
-                cells[r][c] = EMPTY;
+        for (int row = 0; row < SIZE; row++) {
+            for (int col = 0; col < SIZE; col++) {
+                grid[row][col] = EMPTY;
             }
         }
-        activeMark = X;
+        turn = X;
     }
 
     char getCurrentPlayer() {
-        return activeMark;
+        return turn;
     }
 
     char getCell(int row, int col) {
-        ensureInside(row, col);
-        return cells[row][col];
+        checkCoordinates(row, col);
+        return grid[row][col];
     }
 
     boolean isEmptyCell(int row, int col) {
-        return inBounds(row, col) && cells[row][col] == EMPTY;
+        return withinBoard(row, col) && grid[row][col] == EMPTY;
     }
 
     boolean isValidMove(int row, int col) {
-        return inBounds(row, col) && cells[row][col] == EMPTY && !isGameOver();
+        return withinBoard(row, col) && grid[row][col] == EMPTY && !isGameOver();
     }
 
     boolean placeMove(int row, int col) {
         if (!isValidMove(row, col)) {
             return false;
         }
-        cells[row][col] = activeMark;
+        grid[row][col] = turn;
         if (!isGameOver()) {
-            toggleActiveMark();
+            swapTurn();
         }
         return true;
     }
 
     void setCellForTest(int row, int col, char player) {
-        ensureInside(row, col);
+        checkCoordinates(row, col);
         if (player != X && player != O && player != EMPTY) {
             throw new IllegalArgumentException("Unknown player");
         }
-        cells[row][col] = player;
+        grid[row][col] = player;
     }
 
     void setCurrentPlayerForTest(char player) {
         if (player != X && player != O) {
             throw new IllegalArgumentException("Unknown player");
         }
-        activeMark = player;
+        turn = player;
     }
 
     void switchPlayer() {
-        toggleActiveMark();
+        swapTurn();
     }
 
     Character getWinner() {
-        if (markHasLine(X)) {
+        if (hasWinningLine(X)) {
             return X;
         }
-        if (markHasLine(O)) {
+        if (hasWinningLine(O)) {
             return O;
         }
         return null;
@@ -132,9 +136,12 @@ class Game {
     GameState getState() {
         Character winner = getWinner();
         if (winner != null) {
-            return winner == X ? GameState.X_WON : GameState.O_WON;
+            if (winner == X) {
+                return GameState.X_WON;
+            }
+            return GameState.O_WON;
         }
-        if (noEmptyCells()) {
+        if (boardIsFull()) {
             return GameState.DRAW;
         }
         return GameState.PLAYING;
@@ -145,146 +152,163 @@ class Game {
     }
 
     boolean isFullBoard() {
-        return noEmptyCells();
+        return boardIsFull();
     }
 
     List<Move> getAvailableMoves() {
-        List<Move> result = new ArrayList<Move>();
-        for (int r = 0; r < SIZE; r++) {
-            for (int c = 0; c < SIZE; c++) {
-                if (cells[r][c] == EMPTY) {
-                    result.add(new Move(r, c));
+        List<Move> moves = new ArrayList<>();
+        for (int row = 0; row < SIZE; row++) {
+            for (int col = 0; col < SIZE; col++) {
+                if (grid[row][col] == EMPTY) {
+                    moves.add(new Move(row, col));
                 }
             }
         }
-        return result;
+        return moves;
     }
 
     Move findBestMove(char aiPlayer) {
-        if (boardIsBlank() && isEmptyCell(1, 1)) {
+        if (isCompletelyEmpty() && isEmptyCell(1, 1)) {
             return new Move(1, 1);
         }
 
-        Move chosen = null;
-        int topScore = Integer.MIN_VALUE;
-        for (Move candidate : getAvailableMoves()) {
-            applyMark(candidate, aiPlayer);
-            int rating = minimax(false, aiPlayer);
-            clearCell(candidate);
-            if (rating > topScore) {
-                topScore = rating;
-                chosen = candidate;
+        Move best = null;
+        int bestValue = Integer.MIN_VALUE;
+        for (Move option : getAvailableMoves()) {
+            writeMove(option, aiPlayer);
+            int value = minimax(false, aiPlayer);
+            eraseMove(option);
+            if (value > bestValue) {
+                bestValue = value;
+                best = option;
             }
         }
-        return chosen;
+        return best;
     }
 
-    int minimax(boolean aiTurn, char aiPlayer) {
-        GameState outcome = getState();
-        if (outcome != GameState.PLAYING) {
-            return rateOutcome(outcome, aiPlayer);
+    int minimax(boolean maximizing, char aiPlayer) {
+        GameState status = getState();
+        if (status != GameState.PLAYING) {
+            return scoreTerminal(status, aiPlayer);
         }
 
-        char side = aiTurn ? aiPlayer : otherMark(aiPlayer);
-        int bound = aiTurn ? Integer.MIN_VALUE : Integer.MAX_VALUE;
-        for (Move step : getAvailableMoves()) {
-            applyMark(step, side);
-            int child = minimax(!aiTurn, aiPlayer);
-            clearCell(step);
-            bound = aiTurn ? Math.max(bound, child) : Math.min(bound, child);
+        char actingPlayer = maximizing ? aiPlayer : opponentOf(aiPlayer);
+        int accumulator = maximizing ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+        for (Move option : getAvailableMoves()) {
+            writeMove(option, actingPlayer);
+            int childValue = minimax(!maximizing, aiPlayer);
+            eraseMove(option);
+            if (maximizing) {
+                accumulator = Math.max(accumulator, childValue);
+            } else {
+                accumulator = Math.min(accumulator, childValue);
+            }
         }
-        return bound;
+        return accumulator;
     }
 
     String boardToString() {
-        StringBuilder text = new StringBuilder();
-        for (int r = 0; r < SIZE; r++) {
-            if (r > 0) {
-                text.append('\n');
+        StringBuilder builder = new StringBuilder();
+        for (int row = 0; row < SIZE; row++) {
+            if (row != 0) {
+                builder.append('\n');
             }
-            for (int c = 0; c < SIZE; c++) {
-                if (c > 0) {
-                    text.append('|');
+            for (int col = 0; col < SIZE; col++) {
+                if (col != 0) {
+                    builder.append('|');
                 }
-                char value = cells[r][c];
-                text.append(value == EMPTY ? '-' : value);
+                char symbol = grid[row][col];
+                builder.append(symbol == EMPTY ? '-' : symbol);
             }
         }
-        return text.toString();
+        return builder.toString();
     }
 
-    private int rateOutcome(GameState outcome, char aiPlayer) {
-        if ((outcome == GameState.X_WON && aiPlayer == X)
-                || (outcome == GameState.O_WON && aiPlayer == O)) {
-            return WIN_SCORE;
+    private int scoreTerminal(GameState status, char aiPlayer) {
+        boolean aiWon = (status == GameState.X_WON && aiPlayer == X)
+                || (status == GameState.O_WON && aiPlayer == O);
+        boolean aiLost = (status == GameState.X_WON && aiPlayer == O)
+                || (status == GameState.O_WON && aiPlayer == X);
+        if (aiWon) {
+            return TERMINAL_SCORE;
         }
-        if ((outcome == GameState.X_WON && aiPlayer == O)
-                || (outcome == GameState.O_WON && aiPlayer == X)) {
-            return -WIN_SCORE;
+        if (aiLost) {
+            return -TERMINAL_SCORE;
         }
         return 0;
     }
 
-    private boolean markHasLine(char mark) {
-        for (int i = 0; i < SIZE; i++) {
-            boolean rowFull = cells[i][0] == mark && cells[i][1] == mark && cells[i][2] == mark;
-            boolean colFull = cells[0][i] == mark && cells[1][i] == mark && cells[2][i] == mark;
-            if (rowFull || colFull) {
+    private boolean hasWinningLine(char mark) {
+        for (int index = 0; index < SIZE; index++) {
+            if (lineIsComplete(grid[index][0], grid[index][1], grid[index][2], mark)) {
+                return true;
+            }
+            if (lineIsComplete(grid[0][index], grid[1][index], grid[2][index], mark)) {
                 return true;
             }
         }
-        boolean mainDiag = cells[0][0] == mark && cells[1][1] == mark && cells[2][2] == mark;
-        boolean antiDiag = cells[0][2] == mark && cells[1][1] == mark && cells[2][0] == mark;
-        return mainDiag || antiDiag;
+        return lineIsComplete(grid[0][0], grid[1][1], grid[2][2], mark)
+                || lineIsComplete(grid[0][2], grid[1][1], grid[2][0], mark);
     }
 
-    private boolean inBounds(int row, int col) {
+    private boolean lineIsComplete(char a, char b, char c, char mark) {
+        return a == mark && b == mark && c == mark;
+    }
+
+    private boolean withinBoard(int row, int col) {
         return row >= 0 && row < SIZE && col >= 0 && col < SIZE;
     }
 
-    private void ensureInside(int row, int col) {
-        if (!inBounds(row, col)) {
+    private void checkCoordinates(int row, int col) {
+        if (!withinBoard(row, col)) {
             throw new IllegalArgumentException("Cell is outside the board");
         }
     }
 
-    private boolean noEmptyCells() {
-        return getAvailableMoves().isEmpty();
+    private boolean boardIsFull() {
+        for (int row = 0; row < SIZE; row++) {
+            for (int col = 0; col < SIZE; col++) {
+                if (grid[row][col] == EMPTY) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
-    private boolean boardIsBlank() {
+    private boolean isCompletelyEmpty() {
         return getAvailableMoves().size() == SIZE * SIZE;
     }
 
-    private char otherMark(char mark) {
+    private char opponentOf(char mark) {
         return mark == X ? O : X;
     }
 
-    private void applyMark(Move move, char mark) {
-        cells[move.getRow()][move.getCol()] = mark;
+    private void writeMove(Move move, char mark) {
+        grid[move.getRow()][move.getCol()] = mark;
     }
 
-    private void clearCell(Move move) {
-        cells[move.getRow()][move.getCol()] = EMPTY;
+    private void eraseMove(Move move) {
+        grid[move.getRow()][move.getCol()] = EMPTY;
     }
 
-    private void toggleActiveMark() {
-        activeMark = activeMark == X ? O : X;
+    private void swapTurn() {
+        turn = turn == X ? O : X;
     }
 }
 
 public class Program {
     public static void main(String[] args) {
-        Game session = new Game();
-        session.placeMove(0, 0);
+        Game match = new Game();
+        match.placeMove(0, 0);
 
-        Move reply = session.findBestMove(Game.O);
-        if (reply != null) {
-            session.placeMove(reply.getRow(), reply.getCol());
+        Move response = match.findBestMove(Game.O);
+        if (response != null) {
+            match.placeMove(response.getRow(), response.getCol());
         }
 
         System.out.println("Current board:");
-        System.out.println(session.boardToString());
-        System.out.println("State: " + session.getState());
+        System.out.println(match.boardToString());
+        System.out.println("State: " + match.getState());
     }
 }
