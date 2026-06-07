@@ -1,0 +1,51 @@
+# Compiled class files
+*.class
+target/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+.vscode/
+.settings/
+.project
+.classpath
+
+# Log files
+*.log
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+*.iml
+.idea/
+out/
+.idea_modules/
+*.swp
+*.swo
+
+
+jacoco.exec
+target/jacoco.exec
+
+
+Thumbs.db
+.DS_Store
+
+
+*.tmp
+*.bak
+
+
+report/
