@@ -114,19 +114,19 @@ class Game {
 <span class="fc" id="L114">        int val = MinMove(board, player); </span>
        
 
-<span class="pc bpc" id="L117" title="1 of 2 branches missed.">        if (val &gt; best_val) { </span>
-<span class="nc" id="L118">            best_val = val;</span>
-<span class="nc" id="L119">            index = 0;</span>
-<span class="nc" id="L120">            best_moves[index] = move_list.get(0)+1; </span>
-<span class="nc" id="L121">        }</span>
-<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        else if (val == best_val)</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        if (val &gt; best_val) { </span>
+<span class="fc" id="L118">            best_val = val;</span>
+<span class="fc" id="L119">            index = 0;</span>
+<span class="fc" id="L120">            best_moves[index] = move_list.get(0)+1; </span>
+<span class="fc" id="L121">        }</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        else if (val == best_val)</span>
 <span class="fc" id="L123">            best_moves[++index] = move_list.get(0)+1; </span>
  
 <span class="fc" id="L125">        System.out.printf(&quot;\nminimax: %3d(%1d) &quot;, 1 + move_list.get(0), val);</span>
 <span class="fc" id="L126">        board[move_list.get(0)] = ' '; </span>
 <span class="fc" id="L127">        move_list.remove(0);</span>
     }
-<span class="pc bpc" id="L129" title="1 of 2 branches missed.">    if (index &gt; 0)  {</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">    if (index &gt; 0)  {</span>
 <span class="fc" id="L130">      Random r = new Random();</span>
 <span class="fc" id="L131">      index = r.nextInt(index);</span>
     }
