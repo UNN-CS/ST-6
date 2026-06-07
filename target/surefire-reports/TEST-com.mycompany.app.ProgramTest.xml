@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.mycompany.app.ProgramTest" time="0.644" tests="33" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="D:\JavaProjects\ST-6\target\test-classes;D:\JavaProjects\ST-6\target\classes;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\HUAWEI\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
+    <property name="java.vm.vendor" value="Microsoft"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://www.microsoft.com"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="D:\Java\JDK\bin"/>
+    <property name="sun.java.command" value="D:\Temp\surefire14943047987121825477\surefirebooter-20260607234308861_3.jar D:\Temp\surefire14943047987121825477 2026-06-07T23-43-08_663-jvmRun1 surefire-20260607234308861_1tmp surefire_0-20260607234308861_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\JavaProjects\ST-6\target\test-classes;D:\JavaProjects\ST-6\target\classes;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\HUAWEI\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\HUAWEI\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\HUAWEI"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="D:\Java\JDK"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\JavaProjects\ST-6"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="D:\Temp\surefire14943047987121825477\surefirebooter-20260607234308861_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.11+10-LTS"/>
+    <property name="user.name" value="HUAWEI"/>
+    <property name="stdout.encoding" value="Cp1251"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Microsoft-13877171"/>
+    <property name="localRepository" value="C:\Users\HUAWEI\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/microsoft/openjdk/issues"/>
+    <property name="java.io.tmpdir" value="D:\Temp\"/>
+    <property name="java.version" value="21.0.11"/>
+    <property name="user.dir" value="D:\JavaProjects\ST-6"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="D:\Java\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\Maven\apache-maven-3.9.16\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\WireGuard\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;D:\Java\JDK\bin;C:\Users\HUAWEI\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\HUAWEI\AppData\Local\Programs\Python\Python313\;C:\Users\HUAWEI\Desktop\питон\Scripts\;C:\Users\HUAWEI\Desktop\питон\;C:\Users\HUAWEI\AppData\Local\Programs\Python\Launcher\;C:\Users\HUAWEI\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2023.1.2\bin;;C:\Users\HUAWEI\.dotnet\tools;C:\Users\HUAWEI\AppData\Local\GitHubDesktop\bin;D:\Microsoft VS Code\bin;D:\JetBrains\IntelliJ IDEA 2026.1.2\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1251"/>
+    <property name="java.vendor" value="Microsoft"/>
+    <property name="java.vm.version" value="21.0.11+10-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="utilityPrintsCharBoard" classname="com.mycompany.app.ProgramTest" time="0.04"/>
+  <testcase name="actionPerformedPlacesHumanAndComputerMoves" classname="com.mycompany.app.ProgramTest" time="0.293"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[1]" classname="com.mycompany.app.ProgramTest" time="0.052"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[2]" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[3]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[4]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[5]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[6]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[7]" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[8]" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[9]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[10]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[11]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[12]" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[13]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[14]" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[15]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateDetectsWins(String, char, State)[16]" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="panelCreatesNineCells" classname="com.mycompany.app.ProgramTest" time="0.006"/>
+  <testcase name="miniMaxReturnsWinningMoveForO" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="utilityPrintsMoveList" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="programMainThrowsHeadless" classname="com.mycompany.app.ProgramTest" time="0.009"/>
+  <testcase name="miniMaxNoMovesReturnsZero" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="checkStateReturnsPlayingWhenNotFinished" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="miniMaxWhenOnlyOneMove" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="utilityPrintsIntBoard" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="cellStoresCorrectData" classname="com.mycompany.app.ProgramTest" time="0.003"/>
+  <testcase name="evaluatePositionReturnsDraw" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="evaluatePositionReturnsWinForPlayer" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+  <testcase name="generateMovesListsEmptyCells" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="gameConstructorInitializesCorrectly" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="checkStateReturnsDrawWhenFull" classname="com.mycompany.app.ProgramTest" time="0.001"/>
+  <testcase name="evaluatePositionReturnsMinusOneForUnfinished" classname="com.mycompany.app.ProgramTest" time="0.002"/>
+</testsuite>
